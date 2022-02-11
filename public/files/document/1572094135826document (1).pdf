@@ -1,0 +1,869 @@
+%PDF-1.3
+%∫ﬂ¨‡
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.28 841.89]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 30218
+>>
+stream
+0.57 w
+0 G
+BT
+/F1 16 Tf
+18.40 TL
+0 g
+56.69 785.20 Td
+() Tj
+T* (    <!-- Topbar Start -->) Tj
+T* (<div class="navbar-custom">) Tj
+T* (    <ul class="list-unstyled topnav-menu float-right mb-0">) Tj
+T* () Tj
+T* (        <!--<li class="d-none d-sm-block">) Tj
+T* (            <form class="app-search">) Tj
+T* (                <div class="app-search-box">) Tj
+T* (                    <div class="input-group">) Tj
+T* (                        <input type="text" class="form-control" placeholder="Search...">) Tj
+T* (                        <div class="input-group-append">) Tj
+T* (                            <button class="btn" type="submit">) Tj
+T* (                                <i class="fe-search"></i>) Tj
+T* (                            </button>) Tj
+T* (                        </div>) Tj
+T* (                    </div>) Tj
+T* (                </div>) Tj
+T* (            </form>) Tj
+T* (        </li>-->) Tj
+T* (        ) Tj
+T* () Tj
+T* (       <li class="dropdown notification-list">) Tj
+T* (            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">) Tj
+T* (                <img src="http://localhost:8080/blog/public/img/profiles/5da5cda91994d.png" alt="user-image" class="rounded-circle">) Tj
+T* (                <span class="pro-user-name ml-1">) Tj
+T* (                                abc <i class="mdi mdi-chevron-down"></i>) Tj
+T* (                </span>) Tj
+T* (            </a>) Tj
+T* (            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">) Tj
+T* (                <!-- item-->) Tj
+T* (                <div class="dropdown-header noti-title">) Tj
+T* (                    <h6 class="text-overflow m-0">Welcome !</h6>) Tj
+T* (                </div>) Tj
+T* () Tj
+T* (                <!-- item-->) Tj
+T* (                                           <a href="http://localhost:8080/blog/userdetails/92" class="dropdown-item notify-item">) Tj
+T* (                            <i class="fe-user"></i>) Tj
+T* (                            <span>) Tj
+T* (                                My Account</span>) Tj
+T* (                        </a>) Tj
+T* (                            <a href="http://localhost:8080/blog/userdetails/92/edit" class="dropdown-item notify-item">) Tj
+T* (                                <i class="fe-user"></i>) Tj
+T* (                                <span>) Tj
+T* (                                Edit Account</span>) Tj
+T* (                            </a>) Tj
+T* (                                                                ) Tj
+T* () Tj
+T* (                    <!-- item-->) Tj
+T* (                      ) Tj
+T* (    <div class="dropdown-divider"></div>) Tj
+T* (                <!-- item-->) Tj
+T* (                <a href="http://localhost:8080/blog/logout" class="dropdown-item notify-item" onclick="event.preventDefault\(\);) Tj
+T* (                                                  document.getElementById\('logout-form'\).submit\(\);">) Tj
+T* (                    <i class="fe-log-out"></i> Logout) Tj
+T* () Tj
+T* (                </a>) Tj
+T* () Tj
+T* (                    <form id="logout-form" action="http://localhost:8080/blog/logout" method="POST" style="display: none;">) Tj
+T* (                        <input type="hidden" name="_token" value="IecffhaWoxWVxd6vvIe3lO1Sid2JzShU97CrTAMQ">                    </form>) Tj
+T* (                ) Tj
+T* () Tj
+T* (            </div>) Tj
+T* (        </li>) Tj
+T* () Tj
+T* (        ) Tj
+T* () Tj
+T* (    </ul>) Tj
+T* () Tj
+T* (    <!-- LOGO -->) Tj
+T* (    <div class="logo-box">) Tj
+T* (        <a href="index.html" class="logo text-center">) Tj
+T* (                        <span class="logo-lg">) Tj
+T* (                            <img src="http://localhost:8080/blog/public/img/logo/logo.png" alt="" style="width:67%;">) Tj
+T* (                            <!-- <span class="logo-lg-text-light">UBold</span> -->) Tj
+T* (                        </span>) Tj
+T* (            <span class="logo-sm">) Tj
+T* (                            <!-- <span class="logo-sm-text-dark">U</span> -->) Tj
+T* (                            <img src="http://localhost:8080/blog/public/img/logo/logo.png" alt="" height="24">) Tj
+T* (                        </span>) Tj
+T* (        </a>) Tj
+T* (    </div>) Tj
+T* () Tj
+T* (    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">) Tj
+T* (        <li>) Tj
+T* (            <button class="button-menu-mobile waves-effect waves-light">) Tj
+T* (                <i class="fe-menu"></i>) Tj
+T* (            </button>) Tj
+T* (        </li>) Tj
+T* () Tj
+T* (        <!--<li class="dropdown d-none d-lg-block">) Tj
+T* (            <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">) Tj
+T* (                Create New) Tj
+T* (                <i class="mdi mdi-chevron-down"></i>) Tj
+T* (            </a>) Tj
+T* (            <div class="dropdown-menu">) Tj
+T* (                <!-- item-->) Tj
+T* (        <!--  <a href="javascript:void\(0\);" class="dropdown-item">) Tj
+T* (              <i class="fe-briefcase mr-1"></i>) Tj
+T* (              <span>New Projects</span>) Tj
+T* (          </a>) Tj
+T* () Tj
+T* (          <!-- item-->) Tj
+T* (        <!--  <a href="javascript:void\(0\);" class="dropdown-item">) Tj
+T* (              <i class="fe-user mr-1"></i>) Tj
+T* (              <span>Create Users</span>) Tj
+T* (          </a>) Tj
+T* () Tj
+T* (          <!-- item-->) Tj
+T* (        <!--   <a href="javascript:void\(0\);" class="dropdown-item">) Tj
+T* (               <i class="fe-bar-chart-line- mr-1"></i>) Tj
+T* (               <span>Revenue Report</span>) Tj
+T* (           </a>) Tj
+T* () Tj
+T* (           <!-- item-->) Tj
+T* (        <!--   <a href="javascript:void\(0\);" class="dropdown-item">) Tj
+T* (               <i class="fe-settings mr-1"></i>) Tj
+T* (               <span>Settings</span>) Tj
+T* (           </a>) Tj
+T* () Tj
+T* (           <div class="dropdown-divider"></div>) Tj
+T* () Tj
+T* (           <!-- item-->) Tj
+T* (        <!--  <a href="javascript:void\(0\);" class="dropdown-item">) Tj
+T* (              <i class="fe-headphones mr-1"></i>) Tj
+T* (              <span>Help & Support</span>) Tj
+T* (          </a>) Tj
+T* () Tj
+T* (      </div>) Tj
+T* (  </li>-->) Tj
+T* () Tj
+T* (      <!--  <li class="dropdown dropdown-mega d-none d-lg-block">) Tj
+T* (            <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">) Tj
+T* (                Mega Menu) Tj
+T* (                <i class="mdi mdi-chevron-down"></i>) Tj
+T* (            </a>) Tj
+T* (            <div class="dropdown-menu dropdown-megamenu">) Tj
+T* (                <div class="row">) Tj
+T* (                    <div class="col-sm-8">) Tj
+T* () Tj
+T* (                        <div class="row">) Tj
+T* (                            <div class="col-md-4">) Tj
+T* (                                <h5 class="text-dark mt-0">UI Components</h5>) Tj
+T* (                                <ul class="list-unstyled megamenu-list">) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Widgets</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Nestable List</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Range Sliders</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Masonry Items</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Sweet Alerts</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Treeview Page</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Tour Page</a>) Tj
+T* (                                    </li>) Tj
+T* (                                </ul>) Tj
+T* (                            </div>) Tj
+T* () Tj
+T* (                            <div class="col-md-4">) Tj
+T* (                                <h5 class="text-dark mt-0">Applications</h5>) Tj
+T* (                                <ul class="list-unstyled megamenu-list">) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">eCommerce Pages</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">CRM Pages</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Email</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Calendar</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Team Contacts</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Task Board</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Email Templates</a>) Tj
+T* (                                    </li>) Tj
+T* (                                </ul>) Tj
+T* (                            </div>) Tj
+T* () Tj
+T* (                            <div class="col-md-4">) Tj
+T* (                                <h5 class="text-dark mt-0">Extra Pages</h5>) Tj
+T* (                                <ul class="list-unstyled megamenu-list">) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Left Sidebar with User</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Menu Collapsed</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Small Left Sidebar</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">New Header Style</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Search Result</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Gallery Pages</a>) Tj
+T* (                                    </li>) Tj
+T* (                                    <li>) Tj
+T* (                                        <a href="javascript:void\(0\);">Maintenance & Coming Soon</a>) Tj
+T* (                                    </li>) Tj
+T* (                                </ul>) Tj
+T* (                            </div>) Tj
+T* (                        </div>) Tj
+T* (                    </div>) Tj
+T* (                    <div class="col-sm-4">) Tj
+T* (                        <div class="text-center mt-3">) Tj
+T* (                            <h3 class="text-dark">Special Discount Sale!</h3>) Tj
+T* (                            <h4>Save up to 70% off.</h4>) Tj
+T* (                            <button class="btn btn-primary btn-rounded mt-3">Download Now</button>) Tj
+T* (                        </div>) Tj
+T* (                    </div>) Tj
+T* (                </div>) Tj
+T* () Tj
+T* (            </div>) Tj
+T* (        </li>-->) Tj
+T* (    </ul>) Tj
+T* (</div>) Tj
+T* (<!-- end Topbar -->) Tj
+T* (    <!-- ========== Left Sidebar Start ========== -->) Tj
+T* (<div class="left-side-menu">) Tj
+T* () Tj
+T* (    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 547px;"><div class="slimscroll-menu" style="overflow: hidden; width: auto; height: 547px;">) Tj
+T* () Tj
+T* (        <!--- Sidemenu -->) Tj
+T* (        <div id="sidebar-menu">) Tj
+T* () Tj
+T* (            <ul class="metismenu" id="side-menu">) Tj
+T* () Tj
+T* (                <li class="menu-title">Navigation</li>) Tj
+T* () Tj
+T* (                               <li>) Tj
+T* (                    <a href="http://localhost:8080/blog/admin">) Tj
+T* (                        <i class="fe-airplay"></i>) Tj
+T* (                        <span> Dashboard </span>) Tj
+T* (                    </a>) Tj
+T* (                </li>) Tj
+T* () Tj
+T* (                <li>) Tj
+T* (                    <a href="javascript: void\(0\);">) Tj
+T* (                        <i class="fe-pocket"></i>) Tj
+T* (                        <span> Products </span>) Tj
+T* (                        <span class="menu-arrow"></span>) Tj
+T* (                    </a>) Tj
+T* (                    <ul class="nav-second-level collapse" aria-expanded="false">) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/products">- All Products</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/products/create">- Add Product</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/designs">- All Designs</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/designs/create">- Add design</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/websites">- All Websites</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/websites/create">- Add Website</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/categories">- All Category</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/categories/create">- Add Category</a>) Tj
+T* (                        </li>) Tj
+T* () Tj
+T* () Tj
+T* (                    </ul>) Tj
+T* (                </li>) Tj
+T* () Tj
+T* (                    <li>) Tj
+T* (                        <a href="javascript: void\(0\);">) Tj
+T* (                            <i class="fe-pocket"></i>) Tj
+T* (                            <span> Packages </span>) Tj
+T* (                            <span class="menu-arrow"></span>) Tj
+T* (                        </a>) Tj
+T* (                        <ul class="nav-second-level collapse" aria-expanded="false">) Tj
+T* (                            <li>) Tj
+T* (                                <a href="http://localhost:8080/blog/packages/create">- Add Package</a>) Tj
+T* (                            </li>) Tj
+T* () Tj
+T* (                        </ul>) Tj
+T* (                    </li>) Tj
+T* () Tj
+T* () Tj
+T* (                <li>) Tj
+T* (                    <a href="http://localhost:8080/blog/adminorders">) Tj
+T* (                        <i class="fe-shopping-cart"></i>) Tj
+T* (                        <span> Orders </span>) Tj
+T* (                    </a>) Tj
+T* (                </li>) Tj
+T* () Tj
+T* () Tj
+T* () Tj
+T* () Tj
+T* (                <li>) Tj
+T* (                    <a href="http://localhost:8080/blog/invoices">) Tj
+T* (                        <i class="fe-file-text"></i>) Tj
+T* (                        <span> Invoice </span>) Tj
+T* (                    </a>) Tj
+T* (                </li>) Tj
+T* (                <li>) Tj
+T* (                    <a href="http://localhost:8080/blog/userdetails">) Tj
+T* (                        <i class="fe-mail"></i>) Tj
+T* (                        <span> Users </span>) Tj
+T* (                    </a>) Tj
+T* () Tj
+T* (                </li>) Tj
+T* () Tj
+T* () Tj
+T* (                <li class="menu-title mt-2"><hr></li>) Tj
+T* () Tj
+T* (                <li>) Tj
+T* (                    <a href="http://localhost:8080/blog/faqs">) Tj
+T* (                        <i class="fe-mail"></i>) Tj
+T* (                        <span> FAQ </span>) Tj
+T* (                    </a>) Tj
+T* (                    <ul class="nav-second-level collapse" aria-expanded="false">) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/faqs">- All FAQs</a>) Tj
+T* (                        </li>) Tj
+T* (                        <li>) Tj
+T* (                            <a href="http://localhost:8080/blog/faqs/create">- Add FAQ</a>) Tj
+T* (                        </li>) Tj
+T* (                    </ul>) Tj
+T* () Tj
+T* (                 </li>) Tj
+T* () Tj
+T* (                <li>) Tj
+T* () Tj
+T* () Tj
+T* (                    <a href="http://localhost:8080/blog/logout" onclick="event.preventDefault\(\);) Tj
+T* (                                                  document.getElementById\('logout-form'\).submit\(\);">) Tj
+T* (                        <i class="fe-mail"></i>) Tj
+T* (                        <span> Logout </span>) Tj
+T* (                    </a>) Tj
+T* (                    <form id="logout-form" action="http://localhost:8080/blog/logout" method="POST" style="display: none;">) Tj
+T* (                        <input type="hidden" name="_token" value="IecffhaWoxWVxd6vvIe3lO1Sid2JzShU97CrTAMQ">                    </form>) Tj
+T* () Tj
+T* () Tj
+T* (                </li>) Tj
+T* (                ) Tj
+T* () Tj
+T* (                                ) Tj
+T* (            </ul>) Tj
+T* () Tj
+T* () Tj
+T* () Tj
+T* () Tj
+T* (        </div>) Tj
+T* (        <!-- End Sidebar -->) Tj
+T* () Tj
+T* (        <div class="clearfix"></div>) Tj
+T* () Tj
+T* (    </div><div class="slimScrollBar" style="background: rgb\(158, 165, 171\); width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 547px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb\(51, 51, 51\); opacity: 0.2; z-index: 90; right: 1px;"></div></div>) Tj
+T* (    <!-- Sidebar -left -->) Tj
+T* () Tj
+T* (</div>) Tj
+T* (<!-- Left Sidebar End -->) Tj
+T* () Tj
+T* (    <!-- ============================================================== -->) Tj
+T* (    <!-- Start Page Content here -->) Tj
+T* (    <!-- ============================================================== -->) Tj
+T* () Tj
+T* (    <div class="content-page">) Tj
+T* (        <div class="content">) Tj
+T* () Tj
+T* (            <!-- Start Content-->) Tj
+T* (            <div class="container-fluid">) Tj
+T* () Tj
+T* () Tj
+T* (                <!-- end page title -->) Tj
+T* () Tj
+T* () Tj
+T* (                <!-- end row-->) Tj
+T* () Tj
+T* (                 <!-- start page title -->) Tj
+T* (    <div class="row">) Tj
+T* (        <div class="col-12">) Tj
+T* (            <div class="page-title-box">) Tj
+T* (                <h4 class="page-title">Invoice</h4>) Tj
+T* (            </div>) Tj
+T* (        </div>) Tj
+T* (    </div>) Tj
+T* (    <!-- end page title -->) Tj
+T* () Tj
+T* (    <div class="row">) Tj
+T* (        <div class="col-8 offset-2">) Tj
+T* (            <div class="card-box">) Tj
+T* (                <!-- Logo & title -->) Tj
+T* (                <div class="clearfix">) Tj
+T* (                    <div class="float-left">) Tj
+T* (                        <img src="http://localhost:8080/blog/public/img/logo/logo.png" alt="" style="width: 70%">) Tj
+T* (                        <p>Sonninstraﬂe 6) Tj
+T* (                            20097 Hamburg</p></div>) Tj
+T* (                    <div class="float-right">) Tj
+T* (                        <h4 class="m-0 d-print-none">Invoice # 1 </h4>) Tj
+T* (                        <p>7/9/2019 12:00 PM</p>) Tj
+T* (                    </div>) Tj
+T* (                </div>) Tj
+T* () Tj
+T* (                <div class="row">) Tj
+T* (                    <div class="col-md-6">) Tj
+T* (                        <div class="mt-3">) Tj
+T* () Tj
+T* (                            <p><b>Hello, abc</b></p>) Tj
+T* (                            <p class="text-muted">Thanks a lot because you keep purchasing our products. Our company) Tj
+T* (                                promises to provide high quality products for you as well as outstanding) Tj
+T* (                                customer service for every transaction. </p>) Tj
+T* (                        </div>) Tj
+T* () Tj
+T* (                    </div><!-- end col -->) Tj
+T* (                    <div class="col-md-5 offset-md-1">) Tj
+T* (                        <div class="mt-3 float-right">) Tj
+T* (                            <p class="m-b-10"><strong>Order Date : </strong> <span class="float-right">2019-10-24</span></p>) Tj
+T* (                            <p class="m-b-10"><strong>Completion Date : </strong> <span class="float-right"> &nbsp;2019-10-28</span></p>) Tj
+T* (                            <p class="m-b-10"><strong>Order Status : </strong> <span class="float-right"><span class="badge badge-success">Paid</span></span></p>) Tj
+T* (                            <p class="m-b-10"><strong>Order No. : </strong> <span class="float-right">000028 </span></p>) Tj
+T* (                        </div>) Tj
+T* (                    </div><!-- end col -->) Tj
+T* (                </div>) Tj
+T* (                <!-- end row -->) Tj
+T* () Tj
+T* (                <div class="row mt-3">) Tj
+T* (                    <div class="col-sm-6">) Tj
+T* (                        <h6>Billing Address</h6>) Tj
+T* (                        <address>) Tj
+T* (                            Stanley Jones<br>) Tj
+T* (                            795 Folsom Ave, Suite 600<br>) Tj
+T* (                            San Francisco, CA 94107<br><br>) Tj
+T* (                            <abbr title="Email">Email:</abbr> a@a.com <br>) Tj
+T* (                            <abbr title="Phone">P:</abbr> \(123\) 456-7890) Tj
+T* (                        </address>) Tj
+T* (                    </div> <!-- end col -->) Tj
+T* () Tj
+T* (                    <div class="col-sm-6">) Tj
+T* (                        <h6>Shipping Address</h6>) Tj
+T* (                        <address>) Tj
+T* (                            Stanley Jones<br>) Tj
+T* (                            795 Folsom Ave, Suite 600<br>) Tj
+T* (                            San Francisco, CA 94107<br><br>) Tj
+T* (                            <abbr title="Email">Email:</abbr> a@a.com <br>) Tj
+T* (                            <abbr title="Phone">P:</abbr> \(123\) 456-7890) Tj
+T* (                        </address>) Tj
+T* (                    </div> <!-- end col -->) Tj
+T* (                </div>) Tj
+T* (                <!-- end row -->) Tj
+T* () Tj
+T* (                <div class="row">) Tj
+T* (                    <div class="col-12">) Tj
+T* (                        <div class="table-responsive">) Tj
+T* (                            <table class="table mt-4 table-centered">) Tj
+T* (                                <thead>) Tj
+T* (                                <tr><th>Sr#</th>) Tj
+T* (                                    <th>Product</th>) Tj
+T* (                                    <th style="width: 10%" class="text-right">Price</th>) Tj
+T* (                                </tr></thead>) Tj
+T* (                                <tbody>) Tj
+T* (                                <tr>) Tj
+T* (                                    <td>1</td>) Tj
+T* (                                    <td>) Tj
+T* (                                        <b>product</b> <br>) Tj
+T* (                                    </td>) Tj
+T* (                                    <td class="text-right">Ä100,0</td>) Tj
+T* (                                </tr>) Tj
+T* (                                <tr>) Tj
+T* (                                    <td>2</td>) Tj
+T* (                                    <td>) Tj
+T* (                                        <b>design</b> <br>) Tj
+T* (                                    </td>) Tj
+T* (                                    <td class="text-right">Ä100</td>) Tj
+T* (                                </tr>) Tj
+T* (                                <tr>) Tj
+T* (                                    <td>3</td>) Tj
+T* (                                    <td>) Tj
+T* (                                        <b>website_1</b> <br>) Tj
+T* (                                    </td>) Tj
+T* (                                    <td class="text-right">Ä100,00</td>) Tj
+T* (                                </tr>) Tj
+T* (                                </tbody>) Tj
+T* (                            </table>) Tj
+T* (                        </div> <!-- end table-responsive -->) Tj
+T* (                    </div> <!-- end col -->) Tj
+T* (                </div>) Tj
+T* (                <!-- end row -->) Tj
+T* () Tj
+T* (                <div class="row">) Tj
+T* (                    <div class="col-sm-6">) Tj
+T* (                        <div class="clearfix pt-5">) Tj
+T* (                            <h3>Thanks Alot !</h3>) Tj
+T* () Tj
+T* (                            ) Tj
+T* (                        </div>) Tj
+T* (                    </div> <!-- end col -->) Tj
+T* (                    <div class="col-sm-6">) Tj
+T* (                        <div class="float-right">) Tj
+T* (                            <p><b>Sub-total:</b> <span class="float-right">Ä 300,00</span></p>) Tj
+T* (                            <p><b>Value Added Tax \(19%\):</b> <span class="float-right"> &nbsp;&nbsp;&nbsp; Ä 57,00</span></p>) Tj
+T* (                            <h3>Ä 357,00</h3>) Tj
+T* (                        </div>) Tj
+T* (                        <div class="clearfix"></div>) Tj
+T* (                    </div> <!-- end col -->) Tj
+T* (                </div>) Tj
+T* (                <!-- end row -->) Tj
+T* () Tj
+T* (                <div class="row mt-3">) Tj
+T* (                    <div class="col-md-6">) Tj
+T* (                    <div class="row">) Tj
+T* (                    <div class="col-sm-12">) Tj
+T* (                        <p><b>Bank Name:</b> <span class="float-right">Postbank</span><i class="fas fa-university"></i></p>) Tj
+T* (                        <p><b>Company Name:</b> <span class="float-right">Graviando OHG</span></p>) Tj
+T* (                        <p><b>Purpose:</b> <span class="float-right">RE-35468</span></p>) Tj
+T* () Tj
+T* (                            ) Tj
+T* () Tj
+T* (                     <!-- end col -->) Tj
+T* (                        <div>) Tj
+T* (                            <p><b>IBAN: </b><span class="float-right">DEB2440100460413924468</span></p>) Tj
+T* (                            <p><b>BIC:</b> <span class="float-right">PBNKDEFF</span></p>) Tj
+T* (                        </div>) Tj
+T* (                        <div class="clearfix"></div>) Tj
+T* (                    <!-- end col -->) Tj
+T* (                    </div>) Tj
+T* (                    </div>) Tj
+T* (                    </div>) Tj
+T* () Tj
+T* (                    <div class="col-md-6">) Tj
+T* (                        <p><i class="fab fa-paypal"></i><b>PayPal</b></p>) Tj
+T* (                        <p>Visit the following page :</p>) Tj
+T* (                        <p><a href="https://die.bewerbung.one/paypal/35468">https://die.bewerbung.one/paypal/35468</a></p>) Tj
+T* () Tj
+T* (                    </div>) Tj
+T* (            </div>) Tj
+T* () Tj
+T* (            </div>) Tj
+T* () Tj
+T* () Tj
+T* () Tj
+T* (                <div class="mt-4 mb-1">) Tj
+T* (                    <div class="text-right d-print-none">) Tj
+T* (                        <a href="javascript:window.print\(\)" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-printer mr-1"></i> Print</a>) Tj
+T* (                        <a href="#" class="btn btn-info waves-effect waves-light">Submit</a>) Tj
+T* (                    </div>) Tj
+T* (                </div>) Tj
+T* (            </div> <!-- end card-box -->) Tj
+T* (        </div> <!-- end col -->) Tj
+T* (    </div>) Tj
+T* (    <!-- end row -->) Tj
+T* () Tj
+T* (                <!-- end row -->) Tj
+T* () Tj
+T* () Tj
+T* (                <!-- end row -->) Tj
+T* () Tj
+T* (            </div> <!-- container -->) Tj
+T* () Tj
+T* (        </div> <!-- content -->) Tj
+T* () Tj
+T* (        <!-- Footer Start -->) Tj
+T* (        <footer class="footer">) Tj
+T* (            <div class="container-fluid">) Tj
+T* (                <div class="row">) Tj
+T* (                    <div class="col-md-6">) Tj
+T* (                        2019 © Bewerbung.one) Tj
+T* (                    </div>) Tj
+T* (                    <div class="col-md-6">) Tj
+T* (                        <div class="text-md-right footer-links d-none d-sm-block">) Tj
+T* (                            ) Tj
+T* (                          </div>) Tj
+T* (                      </div>) Tj
+T* (                  </div>) Tj
+T* (              </div>) Tj
+T* (          </footer>) Tj
+T* (          <!-- end Footer -->) Tj
+T* () Tj
+T* (      ) Tj
+ET
+BT
+/F1 16 Tf
+18.40 TL
+0 g
+56.69 756.85 Td
+(This is client-side Javascript to generate a PDF.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.28 841.89]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 81
+>>
+stream
+0.57 w
+0 G
+BT
+/F1 16 Tf
+18.40 TL
+0 g
+56.69 785.20 Td
+(Visit CodexWorld.com) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+/F6 12 0 R
+/F7 13 0 R
+/F8 14 0 R
+/F9 15 0 R
+/F10 16 0 R
+/F11 17 0 R
+/F12 18 0 R
+/F13 19 0 R
+/F14 20 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+21 0 obj
+<<
+/Producer (jsPDF 1.5.3)
+/CreationDate (D:20191025122114+05'00')
+>>
+endobj
+22 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000030635 00000 n 
+0000032460 00000 n 
+0000000015 00000 n 
+0000000124 00000 n 
+0000030395 00000 n 
+0000030504 00000 n 
+0000030698 00000 n 
+0000030823 00000 n 
+0000030953 00000 n 
+0000031086 00000 n 
+0000031224 00000 n 
+0000031348 00000 n 
+0000031477 00000 n 
+0000031609 00000 n 
+0000031745 00000 n 
+0000031873 00000 n 
+0000032000 00000 n 
+0000032129 00000 n 
+0000032262 00000 n 
+0000032364 00000 n 
+0000032710 00000 n 
+0000032796 00000 n 
+trailer
+<<
+/Size 23
+/Root 22 0 R
+/Info 21 0 R
+/ID [ <435E9688F44A758F464FCF6B40CA93AC> <435E9688F44A758F464FCF6B40CA93AC> ]
+>>
+startxref
+32900
+%%EOF
