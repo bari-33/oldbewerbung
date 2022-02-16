@@ -227,17 +227,14 @@ class EmployeeController extends Controller
     public function orders()
     {
         $user=User::find(Auth::user()->id);
-        $orders=$user->employee_orders()->orderBy('created_at','desc')->get();
-
-        return view('employees.orders',compact('orders'));
+        $orders = Order::orderBy('created_at', 'desc')->get();
+        return view('employees.orders',compact('orders','user'));
     }
 
     public function invoices()
     {
         $user=User::find(Auth::user()->id);
         $orders=$user->employee_orders()->orderBy('created_at','desc')->get();
-
-
         return view('employees.invoices',compact('orders'));
     }
     public function tasks()

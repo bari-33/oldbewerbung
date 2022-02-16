@@ -84,7 +84,7 @@ class User extends Authenticatable
 
     public function employee_orders()
     {
-        return $this->belongsToMany(Order::class)->withPivot('amount')->withTimestamps();
+        return $this->belongsToMany(Order::class)->withPivot('user_id')->withTimestamps();
 
     }
 

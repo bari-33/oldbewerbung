@@ -61,20 +61,21 @@
                     <!--Table head-->
                     <thead>
                     <tr>
-                        <th>
-                            <input class="form-check-input" type="checkbox" id="checkbox">
-                            <label class="form-check-label" for="checkbox" class="mr-2 label-table"></label>
+                        <th class="th-lg">
+                            <label></label>
+                            <input class="form-check-input" id="checkAll" type="checkbox">
+
                         </th>
                         <th class="th-lg">
                             <a>ID
                                 <i class="fas fa-sort ml-1"></i>
                             </a>
                         </th>
-                        <th class="th-lg" style="width:22%">
+                        {{-- <th class="th-lg" style="width:22%">
                             <a href="">Mitarbeiter
                                 <i class="fas fa-sort ml-1"></i>
                             </a>
-                        </th>
+                        </th> --}}
                         <th class="th-lg">
                             <a href="">Produkt
                                 <i class="fas fa-sort ml-1"></i>
@@ -85,7 +86,7 @@
                                 <i class="fas fa-sort ml-1"></i>
                             </a>
                         </th>
-                        <th class="th-lg">
+                        {{-- <th class="th-lg">
                             <a href="">Preis
                                 <i class="fas fa-sort ml-1"></i>
                             </a>
@@ -94,7 +95,7 @@
                             <a href="">Bezahlt
                                 <i class="fas fa-sort ml-1"></i>
                             </a>
-                        </th>
+                        </th> --}}
                         <th class="th-lg">
                             <a href="">Daten
                                 <i class="fas fa-sort ml-1"></i>
@@ -118,6 +119,11 @@
                     <!--Table body-->
                     <tbody>
                     @foreach($orders as $order)
+                    <?php
+                    $data = explode(',', $order->user_id);
+                     foreach ($data as $key => $value) {
+                    ?>
+                    @if ($value==$user->id)
                         <tr>
                             <td>
                                 <div class="checkbox checkbox-primary checkbox-single">
@@ -126,14 +132,14 @@
                                 </div>
                             </td>
                             <td><a href="{{url('employees/editOrder/'.$order->id)}}" class="text-body font-weight-bold">{{$order->id}}</a> </td>
-                            <td>
+                            {{-- <td>
                                 <div>
                                     @foreach($order->employees as $employee)
                                         <img src="{{ url('public/img/profiles/'.$employee->profile_picture) }}" style="width:20%;" alt="user-image" class="rounded-circle">
 
                                     @endforeach
                                 </div>
-                            </td>
+                            </td> --}}
                             <td>
                                 <p>{{$order->pdetail->product_title}}</p>
                                 <p>
@@ -160,17 +166,17 @@
                                 @endif
                             </td>
 
-                            <td>
+                            {{-- <td>
                                 {{$order->total_price}} €
-                            </td>
-                            <td>
+                            </td> --}}
+                            {{-- <td>
                                 @if($order->payment_status==0)
                                     <span class="badge badge-danger">Unpaid</span>
                                 @endif
                                 @if($order->payment_status==1)
                                     <span class="badge badge-success">paid</span>
                                 @endif
-                            </td>
+                            </td> --}}
                             <td>
                                 @if($order->order_status==0)
                                     <p><span class="badge badge-danger" style="border-radius: 20px;padding: 10%"><i class="ti-close"></i></span></p>
@@ -194,16 +200,22 @@
                                 @elseif($order->order_status==2||$order->order_status==3)
                                     <a href="{{url('employees/completed/'.$order->id)}}">  <button type="button" class="btn btn-sm btn-light"><i class="ti-check"></i></button></a>
                                 @endif
-                                <button type="button" class="btn btn-sm btn-light invoiceDownload" id="invoiceDownload" data-id="{{$order->id}}"><i class="fe-file-text"></i></button>
+                                {{-- <button type="button" class="btn btn-sm btn-light invoiceDownload" id="invoiceDownload" data-id="{{$order->id}}"><i class="fe-file-text"></i></button> --}}
                                 <button type="button" id="uploadDocuments" data-id="{{$order->id}}" class="uploadDocuments btn btn-sm @if($order->finisheddocuments()->count()==0) btn-light @else btn-primary @endif" ><i class="fe-upload"></i></button>
 
                             </td>
 
                         </tr>
-                    @endforeach
+
                     </tbody>
+                    @endif
+                    <?php
+                         }
+                    ?>
+                    @endforeach
                     <!--Table body-->
                 </table>
+
                 <!--Table-->
             </div>
 
@@ -246,5 +258,9 @@
 
             });
         });
+
+        $("#checkAll").click(function () {
+    		 $('input:checkbox').not(this).prop('checked', this.checked);
+		 });
     </script>
 @endsection

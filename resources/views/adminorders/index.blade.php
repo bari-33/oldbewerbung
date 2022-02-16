@@ -279,6 +279,7 @@
                                     <td><a href="{{ url('adminorders/' . $order->id . '/edit') }}"
                                             class="text-body font-weight-bold">{{ $order->id }}</a> </td>
 
+
                                     <td>
 
                                         <?php

@@ -205,3 +205,5 @@ Route::resource('task','taskController');
 
 // message
 Route::resource('message','messageController');
+Route::get('lang/{locale}','LanguageController@swap');
+

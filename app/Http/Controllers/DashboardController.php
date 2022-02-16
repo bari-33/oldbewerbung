@@ -158,7 +158,7 @@ class DashboardController extends Controller
         $products=Product::all()->count();
         $designs=Design::all()->count();
         $websites=Website::all()->count();
-
+        $orders1 = Order::orderBy('created_at', 'desc')->get();
         $orders=User::find(Auth::user()->id)->employee_orders()->orderBy('created_at','Desc')->get();
         $employee=User::find(Auth::user()->id);
 
@@ -250,6 +250,6 @@ class DashboardController extends Controller
 
         $chat_requests=ChatRequest::where('accepted','0')->get();
 
-        return view('employees.page',compact('products','designs','websites','orders','order_count','employee','percentage','revenue','contacts','admin','count','chat_requests','order_count_percentage','order_p','order_r'));
+        return view('employees.page',compact('orders1','products','designs','websites','orders','order_count','employee','percentage','revenue','contacts','admin','count','chat_requests','order_count_percentage','order_p','order_r'));
     }
 }

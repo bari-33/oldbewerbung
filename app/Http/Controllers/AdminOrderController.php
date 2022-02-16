@@ -482,7 +482,7 @@ class AdminOrderController extends Controller
                 $mpdf->Output($destination, 'F');
             }
 
-          
+
         }
         $zip = new ZipArchive;
         if (public_path("invoice.zip")) {
@@ -525,6 +525,16 @@ class AdminOrderController extends Controller
 
         user::where('id', $id)->update(["order_id" => $orderss]);
 
+        $data1 = order::where('id', $order_id)->select('user_id')->first();
+        $order1   =  $data1->user_id;
+        $order_db = explode(',', $order1);
+        if (($key = array_search($id, $order_db)) !== false) {
+            unset($order_db[$key]);
+        }
+        $orderss1 = implode(',', $order_db);
+
+        order::where('id', $order_id)->update(["user_id" => $orderss1]);
+
         return redirect('adminorders');
     }
     public function restore(request $request)
@@ -551,5 +561,17 @@ class AdminOrderController extends Controller
 
             }
         }
+        $data = order::where("id", $order)->get('user_id')->first();
+        if (isset($data->user_id)) {
+            $employ = explode(",", $data->user_id);
+            if (!in_array($id, $employ)) {
+                order::where("id", $order)->update([
+
+                    "user_id" => empty($data->user_id) ? '' . $id : $data->user_id . ',' . $id
+                ]);
+
+            }
+        }
+
     }
 }
