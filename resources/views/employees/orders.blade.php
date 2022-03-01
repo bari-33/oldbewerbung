@@ -193,13 +193,12 @@
 
                                 </p>
                             </td>
-
                             <td>
-                                @if($order->order_status==1||$order->order_status==0)
+                                {{-- @if($order->order_status==1||$order->order_status==0)
                                     <a href="{{url('employees/inProcess/'.$order->id)}}"> <button type="button" class="btn btn-sm btn-light"><i class="fe-more-horizontal"></i></button></a>
                                 @elseif($order->order_status==2||$order->order_status==3)
                                     <a href="{{url('employees/completed/'.$order->id)}}">  <button type="button" class="btn btn-sm btn-light"><i class="ti-check"></i></button></a>
-                                @endif
+                                @endif --}}
                                 {{-- <button type="button" class="btn btn-sm btn-light invoiceDownload" id="invoiceDownload" data-id="{{$order->id}}"><i class="fe-file-text"></i></button> --}}
                                 <button type="button" id="uploadDocuments" data-id="{{$order->id}}" class="uploadDocuments btn btn-sm @if($order->finisheddocuments()->count()==0) btn-light @else btn-primary @endif" ><i class="fe-upload"></i></button>
 

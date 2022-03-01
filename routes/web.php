@@ -167,8 +167,12 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 
 
     //admin orders controller
-    Route::get('adminorders/inProcess/{order}','AdminOrderController@inProcess');
-    Route::get('adminorders/completed/{order}','AdminOrderController@completed');
+    Route::get('todo/{order}','AdminOrderController@todo');
+    Route::get('running/{order}','AdminOrderController@running');
+    Route::get('check/{order}','AdminOrderController@check');
+    Route::get('finished/{order}','AdminOrderController@finished');
+    Route::get('activated/{order}','AdminOrderController@activated');
+    Route::get('cancelled/{order}','AdminOrderController@cancelled');
     Route::post('adminorders/addEmployee/{order}','AdminOrderController@addEmployee');
     Route::post('adminorders/removeEmployee/{order}','AdminOrderController@removeEmployee');
     Route::post('adminorders/search','AdminOrderController@search');

@@ -25,12 +25,47 @@
         }
 
     </style>
+    <style>
+        .dropbtn {
+            /* background-color: #04AA6D; */
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* .dropdown-content a:hover {background-color: #ddd;} */
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+    </style>
 @endsection
 @section('content')
-
-
-
     <div class="row mb-4"
         style="padding-bottom: 0px;border-radius: 0px 0px 25px 25px;background-color: #323759;margin-left: -27px;margin-right: 0px;width: 104%;padding-left: 15px;padding-right: 15px;">
         <div class="col-md-4">
@@ -210,79 +245,85 @@
 
                         </div>
                     </div>
-                    <table id="designtable" class="table mb-0" style="color: #000;margin-left:10px;">
+                    <div style="overflow-x:auto;">
+                        <table id="designtable" class="table mb-0" style="color: #000;margin-left:10px;">
 
-                        <!--Table head-->
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" name="" id="allSelector">SelectAll</th>
-                                <th class="th-lg">
-                                    <a>ID
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                <th class="th-lg" style="width: 15%">
-                                    <a href="">Mitarbeiter
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                <th class="th-lg">
-                                    <a href="">Produkt
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                <th class="th-lg">
-                                    <a href="">Fertigstellug
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                <th class="th-lg">
-                                    <a href="">Preis
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                <th class="th-lg">
-                                    <a href="">Bezahlt
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                <th class="th-lg">
-                                    <a href="">Daten
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                <th class="th-lg">
-                                    <a href="">Express
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                {{-- @if ($trash == false) --}}
-                                <th class="th-lg">
-                                    <a href="">Aktion
-                                        <i class="fas fa-sort ml-1"></i>
-                                    </a>
-                                </th>
-                                {{-- @endif --}}
-                            </tr>
-                        </thead>
-                        <!--Table head-->
-
-                        <!--Table body-->
-
-                        <tbody>
-                            @foreach ($orders as $order)
+                            <!--Table head-->
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <input name="selector[]" class="checkbox" type="checkbox"
-                                            value="{{ $order->id }}" />
-                                    </td>
-                                    <td><a href="{{ url('adminorders/' . $order->id . '/edit') }}"
-                                            class="text-body font-weight-bold">{{ $order->id }}</a> </td>
+                                    <th><input type="checkbox" name="" id="allSelector">SelectAll</th>
+                                    <th class="th-lg">
+                                        <a>ID
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg" style="width: 15%">
+                                        <a href="">Mitarbeiter
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg">
+                                        <a href="">Produkt
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg">
+                                        <a href="">Fertigstellug
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg">
+                                        <a href="">Preis
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg">
+                                        <a href="">Bezahlt
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg">
+                                        <a href="">Daten
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg">
+                                        <a href="">Express
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    <th class="th-lg">
+                                        <a href="">status
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    {{-- @if ($trash == false) --}}
+                                    <th class="th-lg">
+                                        <a href="">Aktion
+                                            <i class="fas fa-sort ml-1"></i>
+                                        </a>
+                                    </th>
+                                    {{-- @endif --}}
+                                </tr>
+                            </thead>
+                            <!--Table head-->
+
+                            <!--Table body-->
+
+                            <tbody>
+                                @foreach ($orders as $order)
+                                    <tr>
+                                        <td>
+                                            <input name="selector[]" class="checkbox" type="checkbox"
+                                                value="{{ $order->id }}" />
+                                        </td>
+                                        <td><a href="{{ url('adminorders/' . $order->id . '/edit') }}"
+                                                class="text-body font-weight-bold">{{ $order->id }}</a> </td>
 
 
-                                    <td>
+                                        <td>
 
-                                        <?php
+                                            <?php
                                 $order_ids=array();
 
                                 foreach ($dropdown as $key => $drop){
@@ -311,17 +352,17 @@
 
                                      ?>
 
-                                        <div class="hov">
-                                            <button onclick="dropimage({{ $order->id }})" class="dropdown-toggle"
-                                                style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;"
-                                                type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <img src="{!! asset('public/img/profiles/' . $drop1->profile_picture) !!}" id="{{ $order->id }}"
-                                                    alt="user-image" class="rounded-circle image" width="30px"
-                                                    height="30px;" style="display: flex;">
+                                            <div class="hov">
+                                                <button onclick="dropimage({{ $order->id }})" class="dropdown-toggle"
+                                                    style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;"
+                                                    type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    <img src="{!! asset('public/img/profiles/' . $drop1->profile_picture) !!}" id="{{ $order->id }}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;" style="display: flex;">
 
-                                            </button>
-                                            <?php
+                                                </button>
+                                                <?php
 
                                     unset($dropdown->$key);
                                      }
@@ -332,29 +373,30 @@
                              }else {
 
                             ?>
-                                            <div class="hov">
-                                                <button onclick="dropimage({{ $order->id }})" class="dropdown-toggle"
-                                                    style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;"
-                                                    type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                    <img src="{!! asset('public/img/profiles/user.png') !!}" id="{{ $order->id }}"
-                                                        alt="user-image" class="rounded-circle image" width="30px"
-                                                        height="30px;">
-                                                </button>
+                                                <div class="hov">
+                                                    <button onclick="dropimage({{ $order->id }})"
+                                                        class="dropdown-toggle"
+                                                        style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;"
+                                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        <img src="{!! asset('public/img/profiles/user.png') !!}" id="{{ $order->id }}"
+                                                            alt="user-image" class="rounded-circle image" width="30px"
+                                                            height="30px;">
+                                                    </button>
 
-                                                <?php
+                                                    <?php
                              }
 
                                 ?>
 
-                                                <div class="dropdown">
+                                                    <div class="dropdown">
 
 
 
-                                                    <div class="dropdown-menu" id="myDropdown"
-                                                        aria-labelledby="dropdownMenuButton">
-                                                        @foreach ($employees as $key4 => $employe)
-                                                            <?php
+                                                        <div class="dropdown-menu" id="myDropdown"
+                                                            aria-labelledby="dropdownMenuButton">
+                                                            @foreach ($employees as $key4 => $employe)
+                                                                <?php
                                                                 $order_id_exploded=explode(",",$employe->order_id);
 
                                                                 foreach ($order_id_exploded as $key5 => $value) {
@@ -362,40 +404,40 @@
                                                             if($value==$order->id){
 
                                                                 ?>
-                                                            <a type="button"
-                                                                onclick="down({{ $employe->id }},{{ $order->id }})"
-                                                                id="demo">
-                                                                <img src="{{ url('public/img/profiles/' . $employe->profile_picture) }}"
-                                                                    style="width:20%;" alt="user-image"
-                                                                    class="rounded-circle user">
+                                                                <a type="button"
+                                                                    onclick="down({{ $employe->id }},{{ $order->id }})"
+                                                                    id="demo">
+                                                                    <img src="{{ url('public/img/profiles/' . $employe->profile_picture) }}"
+                                                                        style="width:20%;" alt="user-image"
+                                                                        class="rounded-circle user">
 
 
-                                                                @php
-                                                                    echo $employe->name . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $employe->userdetail->deutch_language, $employe->userdetail->english_language, $employe->userdetail->spanish_language, $employe->userdetail->french_language, $employe->userdetail->web_language, $employe->userdetail->Graphic_language, $employe->userdetail->Media_language;
+                                                                    @php
+                                                                        echo $employe->name . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $employe->userdetail->deutch_language, $employe->userdetail->english_language, $employe->userdetail->spanish_language, $employe->userdetail->french_language, $employe->userdetail->web_language, $employe->userdetail->Graphic_language, $employe->userdetail->Media_language;
 
-                                                                @endphp
+                                                                    @endphp
 
-                                                                <span type="button" class="float-right "
-                                                                    onclick="unassing({{ $employe->id }},{{ $order->id }})"><i
-                                                                        class="fa fa-times"
-                                                                        style="color:red;font-size:18px"></i></span>
-                                                            </a>
-                                                            <br>
-                                                            <?php
+                                                                    <span type="button" class="float-right "
+                                                                        onclick="unassing({{ $employe->id }},{{ $order->id }})"><i
+                                                                            class="fa fa-times"
+                                                                            style="color:red;font-size:18px"></i></span>
+                                                                </a>
+                                                                <br>
+                                                                <?php
 
                                                                 }
                                                             }
 
                                                                 ?>
-                                                        @endforeach
-                                                        <?php
-
-                                                        ?>
-                                                        <input class="col-md-12" type="text" placeholder="Search.."
-                                                            id="myInput"><br><br>
-
-                                                        @foreach ($employees as $key4 => $employe)
+                                                            @endforeach
                                                             <?php
+
+                                                            ?>
+                                                            <input class="col-md-12" type="text" placeholder="Search.."
+                                                                id="myInput"><br><br>
+
+                                                            @foreach ($employees as $key4 => $employe)
+                                                                <?php
                                                             $data=[];
                                                                 $order_id_exploded=explode(",",$employe->order_id);
 
@@ -410,150 +452,345 @@
                                                                 ?>
 
 
-                                                            <?php
+                                                                <?php
                                                            }else {
 
                                                            ?>
-                                                            <a type="button"
-                                                                onclick="down({{ $employe->id }},{{ $order->id }})"
-                                                                id="demo">
-                                                                <img src="{{ url('public/img/profiles/' . $employe->profile_picture) }}"
-                                                                    style="width:20%;" alt="user-image"
-                                                                    class="rounded-circle user">
+                                                                <a type="button"
+                                                                    onclick="down({{ $employe->id }},{{ $order->id }})"
+                                                                    id="demo">
+                                                                    <img src="{{ url('public/img/profiles/' . $employe->profile_picture) }}"
+                                                                        style="width:20%;" alt="user-image"
+                                                                        class="rounded-circle user">
 
 
-                                                                @php
-                                                                    echo $employe->name . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $employe->userdetail->deutch_language, $employe->userdetail->english_language, $employe->userdetail->spanish_language, $employe->userdetail->french_language, $employe->userdetail->web_language, $employe->userdetail->Graphic_language, $employe->userdetail->Media_language;
+                                                                    @php
+                                                                        echo $employe->name . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $employe->userdetail->deutch_language, $employe->userdetail->english_language, $employe->userdetail->spanish_language, $employe->userdetail->french_language, $employe->userdetail->web_language, $employe->userdetail->Graphic_language, $employe->userdetail->Media_language;
 
-                                                                @endphp
+                                                                    @endphp
 
-                                                                <span type="button" class="float-right "
-                                                                    onclick="unassing({{ $employe->id }},{{ $order->id }})"><i
-                                                                        class="fa fa-times"
-                                                                        style="color:red;font-size:18px"></i></span>
+                                                                    <span type="button" class="float-right "
+                                                                        onclick="unassing({{ $employe->id }},{{ $order->id }})"><i
+                                                                            class="fa fa-times"
+                                                                            style="color:red;font-size:18px"></i></span>
 
 
 
-                                                            </a>
-                                                            <br>
-                                                            <?php
+                                                                </a>
+                                                                <br>
+                                                                <?php
                                                            }
                                                         ?>
-                                                        @endforeach
-                                                        <?php
-                                                        ?>
+                                                            @endforeach
+                                                            <?php
+                                                            ?>
 
 
+                                                        </div>
                                                     </div>
                                                 </div>
+
+                                        </td>
+
+                                        <td>
+                                            <p>{{ $order->pdetail->product_title }}</p>
+                                            <p>
+                                                @if ($order->product_language == 'English')
+                                                    <span class="badge badge-primary">
+                                                @endif
+                                                @if ($order->product_language == 'German')
+                                                    <span class="badge badge-info">
+                                                @endif
+                                                @if ($order->product_language == 'French')
+                                                    <span class="badge badge-danger">
+                                                @endif
+                                                @if ($order->product_language == 'Spanish')
+                                                    <span class="badge badge-secondary">
+                                                @endif
+                                                {{ $order->product_language }}</span>
+
+                                            </p>
+                                        </td>
+                                        <td class="completion_date">
+                                            @if ($order->order_status == 1 )
+                                                <div class="alert alert-danger" role="alert"
+                                                    style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
+                                                    {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                                </div>
+                                            @elseif($order->order_status == 2)
+                                                <div class="alert alert-info" role="alert"
+                                                    style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
+                                                    {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                                </div>
+                                            @elseif($order->order_status == 3)
+                                                <div class="alert alert-warning" role="alert"
+                                                    style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
+                                                    {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                                </div>
+                                            @elseif($order->order_status == 4)
+                                                <div class="alert alert-success" role="alert"
+                                                    style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
+                                                    {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                                </div>
+                                            @elseif($order->order_status == -1)
+                                                <div class="alert alert-primary" role="alert"
+                                                    style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
+                                                    {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                                </div>
+                                            @endif
+
+                                        </td>
+
+                                        <td>
+                                            {{ $order->total_price }} €
+                                        </td>
+                                        <td>
+                                            @if ($order->payment_status == 0)
+                                                <span class="badge badge-danger">Unpaid</span>
+                                            @endif
+                                            @if ($order->payment_status == 1)
+                                                <span class="badge badge-success">paid</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($order->order_status == 0)
+                                                <p><span class="badge badge-danger"
+                                                        style="border-radius: 20px;padding: 10%"><i
+                                                            class="ti-close"></i></span></p>
+                                            @else
+                                                <p><span class="badge badge-success"
+                                                        style="border-radius: 20px;padding: 10%"><i
+                                                            class="ti-check"></i>
+                                                    </span></p>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <p>
+                                                @if ($order->express == '0,00')
+                                                    <span class="badge badge-secondary">
+                                                    @else<span class="badge badge-success">
+                                                @endif
+                                                24h</span>
+
+                                            </p>
+                                        </td>
+                                        <td>
+                                            @if ($order->order_status == 0)
+
+
+                                            <div class="dropdown">
+                                                <div>
+                                                    <a class="dropbtn"><img src="{!! asset('public/status/simpel.png') !!}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;" style="display: flex;">
+                                                    </a>
+                                                </div>
+                                                <div class="dropdown-content">
+                                                    <a type="button" class="btn btn-secondary text-center text-light"
+                                                    onclick="todo({{$order->id}}, this)"
+                                                    data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">TO DO</a>
+                                                    <a type="button" class="btn btn-info text-center text-light"
+                                                        onclick="running({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Running</a>
+                                                        <a type="button" class="btn btn-warning text-center text-light"
+                                                        onclick="check({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Check</a>
+                                                        <a type="button" class="btn btn-success text-center text-light"
+                                                        onclick="finished({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Finished</a>
+                                                        <a type="button" class="btn btn-primary text-center text-light"
+                                                        onclick="activated({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Activated</a>
+                                                        <a type="button" class="btn btn-danger text-center text-light"
+                                                        onclick="calcelled({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Calcelled</a>
+                                                </div>
                                             </div>
+                                            @endif
+                                            @if ($order->order_status == 2)
 
-                                    </td>
 
-                                    <td>
-                                        <p>{{ $order->pdetail->product_title }}</p>
-                                        <p>
-                                            @if ($order->product_language == 'English')<span class="badge badge-primary">@endif
-                                            @if ($order->product_language == 'German')<span class="badge badge-info">@endif
-                                            @if ($order->product_language == 'French')<span class="badge badge-danger">@endif
-                                            @if ($order->product_language == 'Spanish')<span class="badge badge-secondary">@endif
-                                            {{ $order->product_language }}</span>
-
-                                        </p>
-                                    </td>
-                                    <td>
-                                        @if ($order->order_status == 1 || $order->order_status == 3)
-                                            <div class="alert alert-warning" role="alert"
-                                                style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
-                                                {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                            <div class="dropdown">
+                                                <div>
+                                                    <a class="dropbtn"><img src="{!! asset('public/status/running.png') !!}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;" style="display: flex;">
+                                                    </a>
+                                                </div>
+                                                <div class="dropdown-content">
+                                                    <a type="button" class="btn btn-secondary text-center text-light"
+                                                    onclick="todo({{$order->id}}, this)"
+                                                    data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">TO DO</a>
+                                                    <a type="button" class="btn btn-info text-center text-light"
+                                                        onclick="running({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Running</a>
+                                                        <a type="button" class="btn btn-warning text-center text-light"
+                                                        onclick="check({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Check</a>
+                                                        <a type="button" class="btn btn-success text-center text-light"
+                                                        onclick="finished({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Finished</a>
+                                                        <a type="button" class="btn btn-primary text-center text-light"
+                                                        onclick="activated({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Activated</a>
+                                                        <a type="button" class="btn btn-danger text-center text-light"
+                                                        onclick="calcelled({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Calcelled</a>
+                                                </div>
                                             </div>
-                                        @elseif($order->order_status == 2)
-                                            <div class="alert alert-success" role="alert"
-                                                style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
-                                                {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                            @endif
+                                            @if ($order->order_status == 3)
+
+
+                                            <div class="dropdown">
+                                                <div>
+                                                    <a class="dropbtn"><img src="{!! asset('public/status/check.png') !!}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;" style="display: flex;">
+                                                    </a>
+                                                </div>
+                                                <div class="dropdown-content">
+                                                    <a type="button" class="btn btn-secondary text-center text-light"
+                                                    onclick="todo({{$order->id}}, this)"
+                                                    data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">TO DO</a>
+                                                    <a type="button" class="btn btn-info text-center text-light"
+                                                        onclick="running({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Running</a>
+                                                        <a type="button" class="btn btn-warning text-center text-light"
+                                                        onclick="check({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Check</a>
+                                                        <a type="button" class="btn btn-success text-center text-light"
+                                                        onclick="finished({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Finished</a>
+                                                        <a type="button" class="btn btn-primary text-center text-light"
+                                                        onclick="activated({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Activated</a>
+                                                        <a type="button" class="btn btn-danger text-center text-light"
+                                                        onclick="calcelled({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Calcelled</a>
+                                                </div>
                                             </div>
-                                        @elseif($order->order_status == -1)
-                                            <div class="alert alert-danger" role="alert"
-                                                style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
-                                                {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                            @endif
+                                            @if ($order->order_status == 4)
+
+
+                                            <div class="dropdown">
+                                                <div>
+                                                    <a class="dropbtn"><img src="{!! asset('public/status/todo.png') !!}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;" style="display: flex;">
+                                                    </a>
+                                                </div>
+                                                <div class="dropdown-content">
+                                                    <a type="button" class="btn btn-secondary text-center text-light"
+                                                    onclick="todo({{$order->id}}, this)"
+                                                    data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">TO DO</a>
+                                                    <a type="button" class="btn btn-info text-center text-light"
+                                                        onclick="running({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Running</a>
+                                                        <a type="button" class="btn btn-warning text-center text-light"
+                                                        onclick="check({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Check</a>
+                                                        <a type="button" class="btn btn-success text-center text-light"
+                                                        onclick="finished({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Finished</a>
+                                                        <a type="button" class="btn btn-primary text-center text-light"
+                                                        onclick="activated({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Activated</a>
+                                                        <a type="button" class="btn btn-danger text-center text-light"
+                                                        onclick="calcelled({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Calcelled</a>
+                                                </div>
                                             </div>
-                                        @elseif($order->order_status == -2)
-                                            <div class="alert alert-dark" role="alert"
-                                                style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
-                                                {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                            @endif
+                                            @if ($order->order_status == -1)
+
+
+                                            <div class="dropdown">
+                                                <div>
+                                                    <a class="dropbtn"><img src="{!! asset('public/status/active.png') !!}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;" style="display: flex;">
+                                                    </a>
+                                                </div>
+                                                <div class="dropdown-content">
+                                                    <a type="button" class="btn btn-secondary text-center text-light"
+                                                    onclick="todo({{$order->id}}, this)"
+                                                    data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">TO DO</a>
+                                                    <a type="button" class="btn btn-info text-center text-light"
+                                                        onclick="running({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Running</a>
+                                                        <a type="button" class="btn btn-warning text-center text-light"
+                                                        onclick="check({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Check</a>
+                                                        <a type="button" class="btn btn-success text-center text-light"
+                                                        onclick="finished({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Finished</a>
+                                                        <a type="button" class="btn btn-primary text-center text-light"
+                                                        onclick="activated({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Activated</a>
+                                                        <a type="button" class="btn btn-danger text-center text-light"
+                                                        onclick="calcelled({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Calcelled</a>
+                                                </div>
                                             </div>
-                                        @elseif($order->order_status == 4)
-                                            <div class="alert alert-primary" role="alert"
-                                                style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%">
-                                                {{ \Carbon\Carbon::parse($order->completion_date)->format('l, d, F Y') }}
+                                            @endif
+                                            @if ($order->order_status == 1)
+
+
+                                            <div class="dropdown">
+                                                <div>
+                                                    <a class="dropbtn"><img src="{!! asset('public/status/cancled.png') !!}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;" style="display: flex;">
+                                                    </a>
+                                                </div>
+                                                <div class="dropdown-content">
+                                                    <a type="button" class="btn btn-secondary text-center text-light"
+                                                    onclick="todo({{$order->id}}, this)"
+                                                    data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">TO DO</a>
+                                                    <a type="button" class="btn btn-info text-center text-light"
+                                                        onclick="running({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Running</a>
+                                                        <a type="button" class="btn btn-warning text-center text-light"
+                                                        onclick="check({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Check</a>
+                                                        <a type="button" class="btn btn-success text-center text-light"
+                                                        onclick="finished({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Finished</a>
+                                                        <a type="button" class="btn btn-primary text-center text-light"
+                                                        onclick="activated({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Activated</a>
+                                                        <a type="button" class="btn btn-danger text-center text-light"
+                                                        onclick="calcelled({{$order->id}}, this)"
+                                                        data-id="{{ $order->id }}" style="border-radius: 15px 15px 15px 15px;">Calcelled</a>
+                                                </div>
                                             </div>
+                                            @endif
+                                        </td>
+                                        <td>
 
-                                        @endif
+                                            <button type="button" class="btn btn-sm btn-light invoiceDownload "
+                                                id="invoiceDownload" data-id="{{ $order->id }}"><i
+                                                    class="fe-file-text"></i></button>
+                                            <button type="button" id="uploadDocuments" data-id="{{ $order->id }}"
+                                                class="btn btn-sm @if ($order->finisheddocuments()->count() == 0) btn-light @else btn-primary @endif"><i
+                                                    class="fe-upload"></i></button>
 
-                                    </td>
+                                            <a href="{{ url('adminorders/deleteOrder', ['order' => $order->id]) }}"
+                                                id="deleteOrder" data-id="{{ $order->id }}"
+                                                class="delete-confirm btn btn-sm btn-danger"><i
+                                                    class="fa fa-trash"></i></a>
 
-                                    <td>
-                                        {{ $order->total_price }} €
-                                    </td>
-                                    <td>
-                                        @if ($order->payment_status == 0)
-                                            <span class="badge badge-danger">Unpaid</span>
-                                        @endif
-                                        @if ($order->payment_status == 1)
-                                            <span class="badge badge-success">paid</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if ($order->order_status == 0)
+                                        </td>
 
-                                            <p><span class="badge badge-danger" style="border-radius: 20px;padding: 10%"><i
-                                                        class="ti-close"></i></span></p>
-                                        @else
-                                            <p><span class="badge badge-success" style="border-radius: 20px;padding: 10%"><i
-                                                        class="ti-check"></i>
-                                                </span></p>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <p>
-                                            @if ($order->express == '0,00')<span
-                                                    class="badge badge-secondary">
-                                                @else<span class="badge badge-success">@endif
-                                            24h</span>
+                                    </tr>
+                                @endforeach
+                            </tbody>
 
-                                        </p>
-                                    </td>
-
-                                    <td>
-                                        @if ($order->order_status == 1 || $order->order_status == 0)
-                                            <a href="{{ url('adminorders/inProcess/' . $order->id) }}"><button
-                                                    type="button" class="btn btn-sm btn-light"><i
-                                                        class="fe-more-horizontal"></i></button></a>
-                                        @elseif($order->order_status == 2 || $order->order_status == 3)
-                                            <a href="{{ url('adminorders/completed/' . $order->id) }}"><button
-                                                    type="button" class="btn btn-sm btn-light"><i
-                                                        class="ti-check"></i></button></a>
-                                        @endif
-                                        <button type="button" class="btn btn-sm btn-light invoiceDownload "
-                                            id="invoiceDownload" data-id="{{ $order->id }}"><i
-                                                class="fe-file-text"></i></button>
-                                        <button type="button" id="uploadDocuments" data-id="{{ $order->id }}"
-                                            class="btn btn-sm @if ($order->finisheddocuments()->count() == 0) btn-light @else btn-primary @endif"><i
-                                                class="fe-upload"></i></button>
-
-                                        <a href="{{ url('adminorders/deleteOrder', ['order' => $order->id]) }}"
-                                            id="deleteOrder" data-id="{{ $order->id }}"
-                                            class="delete-confirm btn btn-sm btn-danger"><i
-                                                class="fa fa-trash"></i></a>
-
-                                    </td>
-
-                                </tr>
-                            @endforeach
-                        </tbody>
-
-                        <!--Table body-->
-                    </table>
+                            <!--Table body-->
+                        </table>
+                    </div>
                 </form>
                 <!--Table-->
                 </form>
@@ -566,15 +803,121 @@
 @endsection
 
 @section('quill_js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        //  function dropimage(id) {
-        //             $("#drop").val(id);
+function todo(order,elem) {
+            $.ajax({
+                type: 'GET',
+                url: 'todo/'+ order,
+                success: function(data) {
+                      var data=JSON.parse(data);
+                        //   console.log(data);
+                      if(data)
+                      {
+                         var time = data.completion_date;
+                         var date = moment(time).format('dddd, DD, MMMM  YYYY');
+                      let final_img = $(elem).parent('div').parent('div').parent('td').children().find('.dropbtn').html('<img src="public/status/simpel.png" alt="user-image" class="rounded-circle image" width="30px" height="30px;" style="display: flex;">');
+                         let final_data=$(elem).parent('div').parent('div').parent('td').parent('tr').find('.completion_date').html('<div>  </div>');
+                      }
+                }
+            });
 
-        //         }
+                }
 
+
+         function check(order,elem) {
+            $.ajax({
+                type: 'GET',
+                url: 'check/'+ order,
+                success: function(data) {
+                      var data=JSON.parse(data);
+                        //   console.log(data);
+                      if(data)
+                      {
+                         var time = data.completion_date;
+                      var date = moment(time).format('dddd, DD, MMMM  YYYY');
+                      let final_img = $(elem).parent('div').parent('div').parent('td').children().find('.dropbtn').html('<img src="public/status/check.png" alt="user-image" class="rounded-circle image" width="30px" height="30px;" style="display: flex;">');
+                         let final_data=$(elem).parent('div').parent('div').parent('td').parent('tr').find('.completion_date').html('<div class="alert alert-warning" role="alert"  style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%"> '+ date +' </div>');
+                      }
+                }
+            });
+
+                }
+                function finished(order,elem) {
+            $.ajax({
+                type: 'GET',
+                url: 'finished/'+ order,
+                success: function(data) {
+                      var data=JSON.parse(data);
+                        //   console.log(data);
+                      if(data)
+                      {
+                         var time = data.completion_date;
+                      var date = moment(time).format('dddd, DD, MMMM  YYYY');
+                      let final_img = $(elem).parent('div').parent('div').parent('td').children().find('.dropbtn').html('<img src="public/status/todo.png" alt="user-image" class="rounded-circle image" width="30px" height="30px;" style="display: flex;">');
+                         let final_data=$(elem).parent('div').parent('div').parent('td').parent('tr').find('.completion_date').html('<div class="alert alert-success" role="alert"  style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%"> '+ date +' </div>');
+                      }
+                }
+            });
+
+                }
+                function activated(order,elem) {
+            $.ajax({
+                type: 'GET',
+                url: 'activated/'+ order,
+                success: function(data) {
+                      var data=JSON.parse(data);
+                        //   console.log(data);
+                      if(data)
+                      {
+                         var time = data.completion_date;
+                      var date = moment(time).format('dddd, DD, MMMM  YYYY');
+                      let final_img = $(elem).parent('div').parent('div').parent('td').children().find('.dropbtn').html('<img src="public/status/active.png" alt="user-image" class="rounded-circle image" width="30px" height="30px;" style="display: flex;">');
+                         let final_data=$(elem).parent('div').parent('div').parent('td').parent('tr').find('.completion_date').html('<div class="alert alert-primary" role="alert"  style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%"> '+ date +' </div>');
+                      }
+                }
+            });
+
+                }
+                function calcelled(order,elem) {
+            $.ajax({
+                type: 'GET',
+                url: 'cancelled/'+ order,
+                success: function(data) {
+                      var data=JSON.parse(data);
+                        //   console.log(data);
+                      if(data)
+                      {
+                         var time = data.completion_date;
+                      var date = moment(time).format('dddd, DD, MMMM  YYYY');
+                      let final_img = $(elem).parent('div').parent('div').parent('td').children().find('.dropbtn').html('<img src="public/status/cancled.png" alt="user-image" class="rounded-circle image" width="30px" height="30px;" style="display: flex;">');
+                         let final_data=$(elem).parent('div').parent('div').parent('td').parent('tr').find('.completion_date').html('<div class="alert alert-danger" role="alert"  style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%"> '+ date +' </div>');
+                      }
+                }
+            });
+
+                }
+                function running(order,elem) {
+            $.ajax({
+                type: 'GET',
+                url: 'running/'+ order,
+                success: function(data) {
+                      var data=JSON.parse(data);
+                        //   console.log(data);
+                      if(data)
+                      {
+                         var time = data.completion_date;
+                      var date = moment(time).format('dddd, DD, MMMM  YYYY');
+                      let final_img = $(elem).parent('div').parent('div').parent('td').children().find('.dropbtn').html('<img src="public/status/running.png" alt="user-image" class="rounded-circle image" width="30px" height="30px;" style="display: flex;">');
+                         let final_data=$(elem).parent('div').parent('div').parent('td').parent('tr').find('.completion_date').html('<div class="alert alert-info" role="alert"  style="border-radius: 20px;padding-top: 2%;padding-bottom: 2%"> '+ date +' </div>');
+                      }
+                }
+            });
+
+                }
         function down(id, order) {
 
             $.ajax({
@@ -655,5 +998,4 @@
 
         });
     </script>
-
 @endsection

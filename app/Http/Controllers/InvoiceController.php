@@ -23,7 +23,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $orders=Order::orderBy('created_at','desc')->get();
-		
+
         $ClientDetail=ClientDetail::orderBy('created_at','desc')->get();
 
         $employees=User::whereHas('roles', function($q) {
@@ -195,9 +195,9 @@ class InvoiceController extends Controller
     public function pdf($id){
 
         $order=Order::find($id);
-		
+
         $user=User::find($order->customer_id);
-		
+
         $product=Product::find($order->product_id);
         $design=Design::find($order->design_id);
         $website=Website::find($order->website_id);
@@ -236,7 +236,13 @@ class InvoiceController extends Controller
             'city'=>$order->user->clientdetail->city,
 
         ];
+        $mpdf = new  \Mpdf\Mpdf();
+        $html = view('invoices.download', compact('items'));
+        $mpdf->WriteHTML($html, 2);
+        $filename = $order->id . '.pdf';
+        $destination =  $filename;
+        $mpdf->Output($destination, 'D');
 
-        return view('invoices.download',compact('items'));
+        // return view('invoices.download',compact('items'));
     }
 }

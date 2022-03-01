@@ -376,26 +376,55 @@ class AdminOrderController extends Controller
     }
 
 
-    public function inProcess($order)
+    public function running($order)
     {
-
         $order = Order::find($order);
         $order->order_status = '2';
         $order->save();
-
-
-        return redirect('adminorders');
+        $data = json_encode($order);
+        return response($data);
     }
 
-    public function completed($order)
+    public function check($order)
+    {
+        $order = Order::find($order);
+        $order->order_status = '3';
+        $order->save();
+          $data = json_encode($order);
+        return response($data);
+    }
+    public function finished($order)
     {
         $order = Order::find($order);
         $order->order_status = '4';
-
         $order->save();
+          $data = json_encode($order);
+        return response($data);
+    }
+    public function activated($order)
+    {
+        $order = Order::find($order);
+        $order->order_status = '-1';
+        $order->save();
+          $data = json_encode($order);
+        return response($data);
+    }
+    public function cancelled($order)
+    {
+        $order = Order::find($order);
+        $order->order_status = '1';
+        $order->save();
+          $data = json_encode($order);
+        return response($data);
+    }
 
-
-        return redirect('adminorders');
+    public function todo($order)
+    {
+        $order = Order::find($order);
+        $order->order_status = '0';
+        $order->save();
+          $data = json_encode($order);
+        return response($data);
     }
 
     public function deleteOrder($order)
@@ -476,7 +505,7 @@ class AdminOrderController extends Controller
             foreach ($invoice as  $items) {
                 $mpdf = new  \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-L']);
                 $html = view('invoices.alldown', compact('items'))->render();
-                $mpdf->WriteHTML($html);
+                $mpdf->WriteHTML($html,2);
                 $filename = $order->id . '.pdf';
                 $destination = $path . $filename;
                 $mpdf->Output($destination, 'F');
@@ -532,8 +561,9 @@ class AdminOrderController extends Controller
             unset($order_db[$key]);
         }
         $orderss1 = implode(',', $order_db);
-
-        order::where('id', $order_id)->update(["user_id" => $orderss1]);
+        $order_status = "0";
+        order::where('id', $order_id)->update(["user_id" => $orderss1,
+         "order_status"=>$order_status]);
 
         return redirect('adminorders');
     }
@@ -561,12 +591,13 @@ class AdminOrderController extends Controller
 
             }
         }
+        $order_status = "2";
         $data = order::where("id", $order)->get('user_id')->first();
         if (isset($data->user_id)) {
             $employ = explode(",", $data->user_id);
             if (!in_array($id, $employ)) {
                 order::where("id", $order)->update([
-
+                    "order_status"=>$order_status,
                     "user_id" => empty($data->user_id) ? '' . $id : $data->user_id . ',' . $id
                 ]);
 

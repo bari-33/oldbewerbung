@@ -163,71 +163,174 @@
                                     <td><a href="{{url('adminorders/'.$order->id.'/edit')}}" class="text-body font-weight-bold">{{$order->id}}</a> </td>
                                     <td>{{date('d.m.Y',strtotime($order->created_at))}}</td>
                                     <td>
+
                                         <?php
-                                           $order_ids=array();
-                                        //    dd($order_ids);
-                                           foreach ($dropdown as $key => $drop){
-                                               $order_id_exploded=explode(",",$drop->order_id);
-                                               foreach ($order_id_exploded as $key => $value) {
-                                                   $order_ids[]=$value;
-                                               }
-                                           }
-                                      // echo '<pre>'; print_r($order_ids); echo '</pre>'; die;
-                                        if (in_array($order->id,$order_ids)) {
+                                $order_ids=array();
 
-                                           if (!empty($dropdown)){
+                                foreach ($dropdown as $key => $drop){
+                                    $order_id_exploded=explode(",",$drop->order_id);
+                                    $status_id_exploded=explode(",",$drop->assing_status);
+                                    foreach ($order_id_exploded as $key => $value) {
 
-                                            foreach ($dropdown as $key1 => $drop1){
-                                               $order_id_exploded=explode(",",$drop1->order_id);
-                                            foreach ($order_id_exploded as $key => $drop){
-                                                if ($drop == $order->id) {
+                                        $order_ids[]=$value;
 
-                                                ?>
 
-                                                 <div class="hov">
-                                                    <div class="col-">
-                                               <button onclick="dropimage({{$order->id}})" class="dropdown-toggle"  style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                               <img src="{!! asset('public/img/profiles/'.$drop1->profile_picture )!!}" id="{{$order->id}}"  alt="user-image" class="rounded-circle image" width="30px" height="30px;" style="display: flex;">
+                                    }
 
-                                           </button>
-                                           <?php
 
-                                               unset($dropdown->$key);
-                                                }
+                                }
 
-                                               }
-                                            }
-                                           }
-                                        }else {
 
-                                       ?>
-                                           <div class="hov">
-                                           <button  onclick="dropimage({{$order->id}})"  class="dropdown-toggle"  style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                               <img src="{!! asset('public/img/profiles/user.png' )!!}" id="{{$order->id}}"  alt="user-image" class="rounded-circle image" width="30px" height="30px;">
-                                           </button>
+                             if (in_array($order->id,$order_ids)) {
 
-                                           <?php
-                                        }
+                                if (!empty($dropdown)){
 
-                                           ?>
-                                         <div class="dropdown">
-                                           <div class="dropdown-menu" id="myDropdown" aria-labelledby="dropdownMenuButton">
-                                               <input class="col-md-12" type="text" placeholder="Search.." id="myInput" ><br><br>
-                                               @foreach ($employees as $employe)
-                                               <a type="button"  onclick="down({{$employe->id}},{{$order->id}})" id="demo">
-                                               <img src="{{ url('public/img/profiles/'.$employe->profile_picture) }}" style="width:20%;" alt="user-image" class="rounded-circle user">
-                                                     @php
-                                                         echo $employe->name."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp". $employe->userdetail->deutch_language, $employe->userdetail->english_language ,$employe->userdetail->spanish_language ,$employe->userdetail->french_language,$employe->userdetail->web_language,$employe->userdetail->Graphic_language,$employe->userdetail->Media_language;
-                                                     @endphp
-                                               <span type="button" class="float-right " onclick="unassing({{$employe->id}},{{$order->id}})" ><i class="fa fa-times"style="color:red;font-size:18px"></i></span>
-                                               </a>
-                                               <br>
+                                 foreach ($dropdown as $key1 => $drop1){
+                                    $order_id_exploded=explode(",",$drop1->order_id);
+                                    $status_id_exploded=explode(",",$drop1->assing_status);
+                                 foreach ($order_id_exploded as $key => $drop){
+                                     if ($drop == $order->id) {
 
-                                               @endforeach
-                                           </div>
-                                           </div>
-                                       </div>
-                                   </td>
+                                     ?>
+
+                                        <div class="hov">
+                                            <button onclick="dropimage({{ $order->id }})" class="dropdown-toggle"
+                                                style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;"
+                                                type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                <img src="{!! asset('public/img/profiles/' . $drop1->profile_picture) !!}" id="{{ $order->id }}"
+                                                    alt="user-image" class="rounded-circle image" width="30px"
+                                                    height="30px;" style="display: flex;">
+
+                                            </button>
+                                            <?php
+
+                                    unset($dropdown->$key);
+                                     }
+
+                                    }
+                                 }
+                                }
+                             }else {
+
+                            ?>
+                                            <div class="hov">
+                                                <button onclick="dropimage({{ $order->id }})" class="dropdown-toggle"
+                                                    style="background-color: transparent;border: none;margin-left: 50%;margin-right: 50%;"
+                                                    type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    <img src="{!! asset('public/img/profiles/user.png') !!}" id="{{ $order->id }}"
+                                                        alt="user-image" class="rounded-circle image" width="30px"
+                                                        height="30px;">
+                                                </button>
+
+                                                <?php
+                             }
+
+                                ?>
+
+                                                <div class="dropdown">
+
+
+
+                                                    <div class="dropdown-menu" id="myDropdown"
+                                                        aria-labelledby="dropdownMenuButton">
+                                                        @foreach ($employees as $key4 => $employe)
+                                                            <?php
+                                                                $order_id_exploded=explode(",",$employe->order_id);
+
+                                                                foreach ($order_id_exploded as $key5 => $value) {
+
+                                                            if($value==$order->id){
+
+                                                                ?>
+                                                            <a type="button"
+                                                                onclick="down({{ $employe->id }},{{ $order->id }})"
+                                                                id="demo">
+                                                                <img src="{{ url('public/img/profiles/' . $employe->profile_picture) }}"
+                                                                    style="width:20%;" alt="user-image"
+                                                                    class="rounded-circle user">
+
+
+                                                                @php
+                                                                    echo $employe->name . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $employe->userdetail->deutch_language, $employe->userdetail->english_language, $employe->userdetail->spanish_language, $employe->userdetail->french_language, $employe->userdetail->web_language, $employe->userdetail->Graphic_language, $employe->userdetail->Media_language;
+
+                                                                @endphp
+
+                                                                <span type="button" class="float-right "
+                                                                    onclick="unassing({{ $employe->id }},{{ $order->id }})"><i
+                                                                        class="fa fa-times"
+                                                                        style="color:red;font-size:18px"></i></span>
+                                                            </a>
+                                                            <br>
+                                                            <?php
+
+                                                                }
+                                                            }
+
+                                                                ?>
+                                                        @endforeach
+                                                        <?php
+
+                                                        ?>
+                                                        <input class="col-md-12" type="text" placeholder="Search.."
+                                                            id="myInput"><br><br>
+
+                                                        @foreach ($employees as $key4 => $employe)
+                                                            <?php
+                                                            $data=[];
+                                                                $order_id_exploded=explode(",",$employe->order_id);
+
+                                                                foreach ($order_id_exploded as $key5 => $value) {
+                                                                  array_push($data, $value);
+                                                                }
+
+
+                                                                    if(in_array($order->id,$data)){
+
+
+                                                                ?>
+
+
+                                                            <?php
+                                                           }else {
+
+                                                           ?>
+                                                            <a type="button"
+                                                                onclick="down({{ $employe->id }},{{ $order->id }})"
+                                                                id="demo">
+                                                                <img src="{{ url('public/img/profiles/' . $employe->profile_picture) }}"
+                                                                    style="width:20%;" alt="user-image"
+                                                                    class="rounded-circle user">
+
+
+                                                                @php
+                                                                    echo $employe->name . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $employe->userdetail->deutch_language, $employe->userdetail->english_language, $employe->userdetail->spanish_language, $employe->userdetail->french_language, $employe->userdetail->web_language, $employe->userdetail->Graphic_language, $employe->userdetail->Media_language;
+
+                                                                @endphp
+
+                                                                <span type="button" class="float-right "
+                                                                    onclick="unassing({{ $employe->id }},{{ $order->id }})"><i
+                                                                        class="fa fa-times"
+                                                                        style="color:red;font-size:18px"></i></span>
+
+
+
+                                                            </a>
+                                                            <br>
+                                                            <?php
+                                                           }
+                                                        ?>
+                                                        @endforeach
+                                                        <?php
+                                                        ?>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                    </td>
                                      <td>
                                         <label class="label label-success">{{date('l d.m.Y',strtotime($order->completion_date))}}</label>
                                     </td>
@@ -258,11 +361,11 @@
                                     </td>
 
                                     <td>
-                                        @if($order->order_status==1||$order->order_status==0)
+                                        {{-- @if($order->order_status==1||$order->order_status==0)
                                             <a href="{{url('adminorders/inProcess/'.$order->id)}}"><button type="button" class="btn btn-sm btn-light"><i class="fe-more-horizontal"></i></button></a>
                                         @elseif($order->order_status==2||$order->order_status==3)
                                             <a href="{{url('adminorders/completed/'.$order->id)}}"><button type="button" class="btn btn-sm btn-light"><i class="ti-check"></i></button></a>
-                                        @endif
+                                        @endif --}}
                                             <button type="button" class="btn btn-sm btn-light" id="invoiceDownload" data-id="{{$order->id}}"><i class="fe-file-text"></i></button>
                                         <button type="button" id="uploadDocuments" data-id="{{$order->id}}" class="btn btn-sm @if($order->finisheddocuments()->count()==0) btn-light @else btn-primary @endif" ><i class="fe-upload"></i></button>
 

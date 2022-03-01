@@ -48,7 +48,8 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 | and wonderful application we have prepared for them.
 |
 */
-
+define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+require FCPATH . 'vendor/autoload.php';
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(

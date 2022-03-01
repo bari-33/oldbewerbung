@@ -240,10 +240,10 @@ class EmployeeController extends Controller
     public function tasks()
     {
         $user=User::find(Auth::user()->id);
-        $orders=$user->employee_orders()->orderBy('created_at','desc')->get();
-        $order_count=$user->employee_orders->count();
+        $orders = Order::orderBy('created_at', 'desc')->get();
 
-        return view('employees.tasks',compact('orders','order_count'));
+
+        return view('employees.tasks',compact('orders','user'));
     }
 
 

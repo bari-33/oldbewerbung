@@ -1,4 +1,4 @@
-
+@extends('layouts.app')
 @section('css')
     <style>
     @media print {
@@ -8,10 +8,9 @@
     }
     </style>
     @endsection
-    
 @section('content')
 
-@foreach ($invoice as $items)
+
 
 
     <div class="row">
@@ -296,7 +295,6 @@
         </div> <!-- end col -->
     </div>
     <!-- end row -->
-    @endforeach
 @endsection
 @section('quill_js')
 
