@@ -26,6 +26,9 @@ class CreateOrdersTable extends Migration
             $table->integer('customer_id')->unsigned();
             $table->integer('employee_chat')->nullable();
             $table->date('completion_date');
+            $table->string('check_box')->default('0');
+            $table->string('notification_status')->default('0');
+            $table->date('completion_date');
             $table->softDeletes();
             $table->timestamps();
 
