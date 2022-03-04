@@ -17,114 +17,181 @@
             </form>
         </li>-->
         @can('customer')<li class="dropdown notification-list">
-            <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <i class="fe-bell noti-icon"></i>
-                @if(empty(Auth::user()->clientdetail->street_no)||empty(Auth::user()->clientdetail->house_no)||empty(Auth::user()->clientdetail->zip_code)||empty(Auth::user()->clientdetail->city))
-                <span class="badge badge-danger rounded-circle noti-icon-badge">1</span>
+                <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="false" aria-expanded="false">
+                    <i class="fe-bell noti-icon"></i>
+                    @if (empty(Auth::user()->clientdetail->street_no) || empty(Auth::user()->clientdetail->house_no) || empty(Auth::user()->clientdetail->zip_code) || empty(Auth::user()->clientdetail->city))
+                        <span class="badge badge-danger rounded-circle noti-icon-badge">1</span>
                     @endif
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-
-                <!-- item-->
-                <div class="dropdown-item noti-title">
-                    <h5 class="m-0">
-                                    <span class="float-right">
-                                       {{-- <a href="#" class="text-dark">
-                                            <small>Clear All</small>
-                                        </a>--}}
-                                    </span>Notification
-                    </h5>
-                </div>
-
-
-                <div class="slimscroll noti-scroll">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
                     <!-- item-->
-                   @if(empty(Auth::user()->clientdetail->street_no)||empty(Auth::user()->clientdetail->house_no)||empty(Auth::user()->clientdetail->zip_code)||empty(Auth::user()->clientdetail->city))
-                    <a href="{{url('clients/'.Auth::user()->id).'/edit'}}" class="dropdown-item notify-item active">
-                        <div class="notify-icon">
-                            <img src="{!! asset('public/img/profiles/profile.png') !!}" class="img-fluid rounded-circle" alt="" /> </div>
+                    <div class="dropdown-item noti-title">
+                        <h5 class="m-0">
+                            <span class="float-right">
+                                {{-- <a href="#" class="text-dark">
+                                            <small>Clear All</small>
+                                        </a> --}}
+                            </span>Notification
+                        </h5>
+                    </div>
 
-                            <p class="notify-details">Billing Address is missing</p>
-                        <p class="text-muted mb-0 user-msg">
-                           <small>Billing Information is required</small>
-                        </p>
-                    </a>
 
+                    <div class="slimscroll noti-scroll">
+
+                        <!-- item-->
+                        @if (empty(Auth::user()->clientdetail->street_no) || empty(Auth::user()->clientdetail->house_no) || empty(Auth::user()->clientdetail->zip_code) || empty(Auth::user()->clientdetail->city))
+                            <a href="{{ url('clients/' . Auth::user()->id) . '/edit' }}"
+                                class="dropdown-item notify-item active">
+                                <div class="notify-icon">
+                                    <img src="{!! asset('public/img/profiles/profile.png') !!}" class="img-fluid rounded-circle" alt="" />
+                                </div>
+
+                                <p class="notify-details">Billing Address is missing</p>
+                                <p class="text-muted mb-0 user-msg">
+                                    <small>Billing Information is required</small>
+                                </p>
+                            </a>
+                        @endif
+
+                        {{-- <!-- item--> --}}
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item"> --}}
+                        {{-- <div class="notify-icon bg-primary"> --}}
+                        {{-- <i class="mdi mdi-comment-account-outline"></i> --}}
+                        {{-- </div> --}}
+                        {{-- <p class="notify-details">Caleb Flakelar commented on Admin --}}
+                        {{-- <small class="text-muted">1 min ago</small> --}}
+                        {{-- </p> --}}
+                        {{-- </a> --}}
+
+                        {{-- <!-- item--> --}}
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item"> --}}
+                        {{-- <div class="notify-icon"> --}}
+                        {{-- <img src="{!! asset('public/theme/assets/images/users/user-4.jpg') !!}" class="img-fluid rounded-circle" alt="" /> </div> --}}
+                        {{-- <p class="notify-details">Karen Robinson</p> --}}
+                        {{-- <p class="text-muted mb-0 user-msg"> --}}
+                        {{-- <small>Wow ! this admin looks good and awesome design</small> --}}
+                        {{-- </p> --}}
+                        {{-- </a> --}}
+
+                        {{-- <!-- item--> --}}
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item"> --}}
+                        {{-- <div class="notify-icon bg-warning"> --}}
+                        {{-- <i class="mdi mdi-account-plus"></i> --}}
+                        {{-- </div> --}}
+                        {{-- <p class="notify-details">New user registered. --}}
+                        {{-- <small class="text-muted">5 hours ago</small> --}}
+                        {{-- </p> --}}
+                        {{-- </a> --}}
+
+                        {{-- <!-- item--> --}}
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item"> --}}
+                        {{-- <div class="notify-icon bg-info"> --}}
+                        {{-- <i class="mdi mdi-comment-account-outline"></i> --}}
+                        {{-- </div> --}}
+                        {{-- <p class="notify-details">Caleb Flakelar commented on Admin --}}
+                        {{-- <small class="text-muted">4 days ago</small> --}}
+                        {{-- </p> --}}
+                        {{-- </a> --}}
+
+                        {{-- <!-- item--> --}}
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item"> --}}
+                        {{-- <div class="notify-icon bg-secondary"> --}}
+                        {{-- <i class="mdi mdi-heart"></i> --}}
+                        {{-- </div> --}}
+                        {{-- <p class="notify-details">Carlos Crouch liked --}}
+                        {{-- <b>Admin</b> --}}
+                        {{-- <small class="text-muted">13 days ago</small> --}}
+                        {{-- </p> --}}
+                        {{-- </a> --}}
+                    </div>
+
+                    {{-- <!-- All--> --}}
+                    {{-- <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all"> --}}
+                    {{-- View all --}}
+                    {{-- <i class="fi-arrow-right"></i> --}}
+                    {{-- </a> --}}
+
+                </div>
+        </li>@endcan
+        @can('admin')
+
+            <li class="dropdown notification-list">
+                <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="false" aria-expanded="false">
+                    <i class="fe-bell noti-icon"></i>
+                    <?php
+                 $count = [];
+                $orders = app\Order::orderBy('created_at', 'desc')->get();
+                foreach ($orders as $order) {
+
+
+            ?>
+                    @if ($order->order_status == 3)
+                    @if ($order->notification_status == 0)
+                        <?php
+                        $data = explode(',', $order->id);
+                        array_push($count, $data);
+                        $count1 = count($count);
+                        ?>
+
+                        <span class="badge badge-danger rounded-circle noti-icon-badge">{{ $count1 }}</span>
+                    @endif
                     @endif
 
-                    {{--<!-- item-->--}}
-                    {{--<a href="javascript:void(0);" class="dropdown-item notify-item">--}}
-                        {{--<div class="notify-icon bg-primary">--}}
-                            {{--<i class="mdi mdi-comment-account-outline"></i>--}}
-                        {{--</div>--}}
-                        {{--<p class="notify-details">Caleb Flakelar commented on Admin--}}
-                            {{--<small class="text-muted">1 min ago</small>--}}
-                        {{--</p>--}}
-                    {{--</a>--}}
+                    <?php
+            }
+        ?>
 
-                    {{--<!-- item-->--}}
-                    {{--<a href="javascript:void(0);" class="dropdown-item notify-item">--}}
-                        {{--<div class="notify-icon">--}}
-                            {{--<img src="{!! asset('public/theme/assets/images/users/user-4.jpg') !!}" class="img-fluid rounded-circle" alt="" /> </div>--}}
-                        {{--<p class="notify-details">Karen Robinson</p>--}}
-                        {{--<p class="text-muted mb-0 user-msg">--}}
-                            {{--<small>Wow ! this admin looks good and awesome design</small>--}}
-                        {{--</p>--}}
-                    {{--</a>--}}
+                </a>
 
-                    {{--<!-- item-->--}}
-                    {{--<a href="javascript:void(0);" class="dropdown-item notify-item">--}}
-                        {{--<div class="notify-icon bg-warning">--}}
-                            {{--<i class="mdi mdi-account-plus"></i>--}}
-                        {{--</div>--}}
-                        {{--<p class="notify-details">New user registered.--}}
-                            {{--<small class="text-muted">5 hours ago</small>--}}
-                        {{--</p>--}}
-                    {{--</a>--}}
+                <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                    <?php
+                $orders = app\Order::orderBy('created_at', 'desc')->get();
+                foreach ($orders as $order) {
 
-                    {{--<!-- item-->--}}
-                    {{--<a href="javascript:void(0);" class="dropdown-item notify-item">--}}
-                        {{--<div class="notify-icon bg-info">--}}
-                            {{--<i class="mdi mdi-comment-account-outline"></i>--}}
-                        {{--</div>--}}
-                        {{--<p class="notify-details">Caleb Flakelar commented on Admin--}}
-                            {{--<small class="text-muted">4 days ago</small>--}}
-                        {{--</p>--}}
-                    {{--</a>--}}
 
-                    {{--<!-- item-->--}}
-                    {{--<a href="javascript:void(0);" class="dropdown-item notify-item">--}}
-                        {{--<div class="notify-icon bg-secondary">--}}
-                            {{--<i class="mdi mdi-heart"></i>--}}
-                        {{--</div>--}}
-                        {{--<p class="notify-details">Carlos Crouch liked--}}
-                            {{--<b>Admin</b>--}}
-                            {{--<small class="text-muted">13 days ago</small>--}}
-                        {{--</p>--}}
-                    {{--</a>--}}
+            ?>
+                    @if ($order->order_status == 3)
+                        @if ($order->notification_status == 0)
+                            <a href="{{ url('task') }}" onclick="seen({{ $order->id }})" type="button"
+                                class="text-dark">Order #{{ $order->id }} is finished, Check IT</a>
+                                <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                        @endif
+                    @endif
+                    <?php
+            }
+        ?>
                 </div>
 
-                {{--<!-- All-->--}}
-                {{--<a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">--}}
-                    {{--View all--}}
-                    {{--<i class="fi-arrow-right"></i>--}}
-                {{--</a>--}}
+            </li>
 
-            </div>
-        </li>@endcan
+        @endcan
 
-       <li class="dropdown notification-list">
-            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                @can('admin')<img src="{!! asset('public/img/profiles/'.auth()->user()->profile_picture) !!}" alt="user-image" class="rounded-circle"> @endcan
-                @can('employee')<img src="{!! asset('public/img/profiles/'.auth()->user()->profile_picture) !!}" alt="user-image" class="rounded-circle"> @endcan
-                    @can('customer')<img src="{!! asset('public/img/profiles/'.auth()->user()->profile_picture) !!}" alt="user-image" class="rounded-circle"> @endcan
 
-                    @if(Auth::check())
+        <li class="dropdown notification-list">
+            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#"
+                role="button" aria-haspopup="false" aria-expanded="false">
+                @can('admin')
+                    <img src="{!! asset('public/img/profiles/' . auth()->user()->profile_picture) !!}" alt="user-image" class="rounded-circle">
+                @endcan
+                @can('employee')
+                    <img src="{!! asset('public/img/profiles/' . auth()->user()->profile_picture) !!}" alt="user-image" class="rounded-circle">
+                @endcan
+                @can('customer')
+                    <img src="{!! asset('public/img/profiles/' . auth()->user()->profile_picture) !!}" alt="user-image" class="rounded-circle">
+                @endcan
+
+                @if (Auth::check())
                     <span class="pro-user-name ml-1">
-                               @canany(['admin','employee']) {{ Auth::user()->name }} @endcanany @can('customer') {{ Auth::user()->name }} @endcan <i class="mdi mdi-chevron-down"></i>
+                        @canany(['admin', 'employee'])
+                            {{ Auth::user()->name }}
+                            @endcanany @can('customer')
+                            {{ Auth::user()->name }}
+                        @endcan <i class="mdi mdi-chevron-down"></i>
                     </span>
-                    @endif
+                @endif
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                 <!-- item-->
@@ -133,46 +200,46 @@
                 </div>
 
                 <!-- item-->
-                  @can('admin')
-                         <a href="{{url('userdetails/'.Auth::user()->id)}}" class="dropdown-item notify-item">
-                            <i class="fe-user"></i>
-                            <span>
-                                mein Konto</span>
-                        </a>
-                            <a href="{{url('userdetails/'.Auth::user()->id).'/edit'}}" class="dropdown-item notify-item">
-                                <i class="fe-user"></i>
-                                <span>
-                                Konto bearbeiten</span>
-                            </a>
-                        @endcan
-                        @can('customer')
-                            <a href="{{url('clients/'.Auth::user()->id)}}" class="dropdown-item notify-item">
-                                <i class="fe-user"></i>
-                                <span>
-                                mein Konto</span>
-                            </a>
-                            <a href="{{url('clients/'.Auth::user()->id).'/edit'}}" class="dropdown-item notify-item">
-                                <i class="fe-user"></i>
-                                <span>
-                                Konto bearbeiten</span>
-                            </a>
-                        @endcan
-                @can('employee')
-                    <a href="{{url('userdetails/'.Auth::user()->id)}}" class="dropdown-item notify-item">
+                @can('admin')
+                    <a href="{{ url('userdetails/' . Auth::user()->id) }}" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>
-                                mein Konto</span>
+                            mein Konto</span>
                     </a>
-                    <a href="{{url('employees')}}" class="dropdown-item notify-item">
+                    <a href="{{ url('userdetails/' . Auth::user()->id) . '/edit' }}" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>
-                                Konto bearbeiten</span>
+                            Konto bearbeiten</span>
+                    </a>
+                @endcan
+                @can('customer')
+                    <a href="{{ url('clients/' . Auth::user()->id) }}" class="dropdown-item notify-item">
+                        <i class="fe-user"></i>
+                        <span>
+                            mein Konto</span>
+                    </a>
+                    <a href="{{ url('clients/' . Auth::user()->id) . '/edit' }}" class="dropdown-item notify-item">
+                        <i class="fe-user"></i>
+                        <span>
+                            Konto bearbeiten</span>
+                    </a>
+                @endcan
+                @can('employee')
+                    <a href="{{ url('userdetails/' . Auth::user()->id) }}" class="dropdown-item notify-item">
+                        <i class="fe-user"></i>
+                        <span>
+                            mein Konto</span>
+                    </a>
+                    <a href="{{ url('employees') }}" class="dropdown-item notify-item">
+                        <i class="fe-user"></i>
+                        <span>
+                            Konto bearbeiten</span>
                     </a>
                 @endcan
 
 
-                    <!-- item-->
-                      {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <!-- item-->
+                {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <i class="fe-settings"></i>
                             <span>Settings</span>
                         </a>
@@ -181,43 +248,43 @@
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <i class="fe-lock"></i>
                             <span>Lock Screen</span>
-                        </a>--}}
-    <div class="dropdown-divider"></div>
+                        </a> --}}
+                <div class="dropdown-divider"></div>
                 <!-- item-->
                 <a href="{{ route('logout') }}" class="dropdown-item notify-item" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
+                    onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
                     <i class="fe-log-out"></i> {{ __('Logout') }}
 
                 </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
                 </a>
 
             </div>
         </li>
 
-        {{--<li class="dropdown notification-list">
+        {{-- <li class="dropdown notification-list">
             <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
                 <i class="fe-settings noti-icon"></i>
             </a>
-        </li>--}}
+        </li> --}}
 
     </ul>
 
     <!-- LOGO -->
     <div class="logo-box">
-        <a href="{{url()->current()}}" class="logo text-center">
-                        <span class="logo-lg">
-                            <img src="{!! asset('public/img/logo/logo.png') !!}" alt="" style="width:67%;">
-                            <!-- <span class="logo-lg-text-light">UBold</span> -->
-                        </span>
+        <a href="{{ url()->current() }}" class="logo text-center">
+            <span class="logo-lg">
+                <img src="{!! asset('public/img/logo/logo.png') !!}" alt="" style="width:67%;">
+                <!-- <span class="logo-lg-text-light">UBold</span> -->
+            </span>
             <span class="logo-sm">
-                            <!-- <span class="logo-sm-text-dark">U</span> -->
-                            <img src="{!! asset('public/img/logo/logo.png') !!}" alt="" height="24">
-                        </span>
+                <!-- <span class="logo-sm-text-dark">U</span> -->
+                <img src="{!! asset('public/img/logo/logo.png') !!}" alt="" height="24">
+            </span>
         </a>
     </div>
 
@@ -269,7 +336,7 @@
       </div>
   </li>-->
 
-      <!--  <li class="dropdown dropdown-mega d-none d-lg-block">
+        <!--  <li class="dropdown dropdown-mega d-none d-lg-block">
             <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 Mega Menu
                 <i class="mdi mdi-chevron-down"></i>
@@ -375,3 +442,14 @@
     </ul>
 </div>
 <!-- end Topbar -->
+<script>
+    function seen(id) {
+        $.ajax({
+            type: 'GET',
+            url: 'seen/' + id,
+            success: function(data) {
+
+            }
+        });
+    }
+</script>

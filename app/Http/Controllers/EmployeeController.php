@@ -6,11 +6,13 @@ use App\Design;
 use App\Order;
 use App\Product;
 use App\User;
+use App\tasks;
 use App\Website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -230,7 +232,51 @@ class EmployeeController extends Controller
         $orders = Order::orderBy('created_at', 'desc')->get();
         return view('employees.orders',compact('orders','user'));
     }
+    public function check1($id,$checked,$checked1)
+    {
 
+        $checkbox=$checked;
+
+        $data = order::where("id", $id)->get('check_box')->first();
+
+        if (isset($data->check_box)) {
+            $employ = explode(",", $data->check_box);
+            if (!in_array($id, $employ)) {
+                order::where("id", $id)->update([
+                    "check_box" => empty($data->check_box) ? '' .$checked : $data->check_box . ',' .$checked
+                ]);
+
+            }
+        }
+        $data1 = order::where("id", $id)->get('check_box')->first();
+        $employ = explode(",", $data1->check_box);
+        $employee = count($employ);
+        if ($checked1==1) {
+        $check1 = "6";
+          if ($employee == $check1) {
+            order::where("id", $id)->update([
+                "order_status" => "3"
+            ]);
+          }
+        }
+        if ($checked1==2) {
+          $check2 = "1";
+          if ($employee == $check2) {
+            order::where("id", $id)->update([
+                "order_status" => "3"
+            ]);
+          }
+        }
+        if ($checked1==3) {
+            $check3 = "5";
+            if ($employee == $check3) {
+              order::where("id", $id)->update([
+                  "order_status" => "3"
+              ]);
+            }
+          }
+
+    }
     public function invoices()
     {
         $user=User::find(Auth::user()->id);
@@ -241,12 +287,26 @@ class EmployeeController extends Controller
     {
         $user=User::find(Auth::user()->id);
         $orders = Order::orderBy('created_at', 'desc')->get();
+        $tasks = DB::table('tasks')->orderBy('created_at', 'desc')->get();
 
-
-        return view('employees.tasks',compact('orders','user'));
+        return view('employees.tasks',compact('orders','user','tasks'));
     }
 
+      public function uncheck($id,$checked)
+      {
+        $data1 = order::where('id', $id)->select('check_box')->first();
+        $order1   =  $data1->check_box;
+        $order_db = explode(',', $order1);
+        if (($key = array_search($checked, $order_db)) !== false) {
+            unset($order_db[$key]);
+        }
+        $orderss1 = implode(',', $order_db);
+        order::where('id', $id)->update(["check_box" => $orderss1
+    , "order_status" => "2"]);
 
+
+
+      }
     public function inProcess($order){
 
         $order=Order::find($order);

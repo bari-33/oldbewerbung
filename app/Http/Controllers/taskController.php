@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Order;
 use Illuminate\Http\Request;
 
 class taskController extends Controller
@@ -13,8 +13,8 @@ class taskController extends Controller
      */
     public function index()
     {
-        // dd("sdfsad");
-      return view('task.index');
+        $orders = Order::orderBy('created_at', 'desc')->get();
+      return view('task.index',compact("orders"));
     }
 
     /**

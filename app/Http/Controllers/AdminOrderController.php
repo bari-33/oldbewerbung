@@ -562,8 +562,12 @@ class AdminOrderController extends Controller
         }
         $orderss1 = implode(',', $order_db);
         $order_status = "0";
+        $check_box = "0";
+        $notification_status = "0";
         order::where('id', $order_id)->update(["user_id" => $orderss1,
-         "order_status"=>$order_status]);
+         "order_status"=>$order_status,
+         "check_box"=>$check_box,
+         "notification_status"=>$notification_status]);
 
         return redirect('adminorders');
     }
@@ -605,4 +609,12 @@ class AdminOrderController extends Controller
         }
 
     }
+     public function seen($id)
+     {
+         $notification_status = "1";
+         order::where("id", $id)->update([
+            "notification_status"=>$notification_status
+        ]);
+     }
+
 }

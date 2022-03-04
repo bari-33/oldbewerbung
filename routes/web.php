@@ -34,6 +34,8 @@ Route::get('employees/completed/{order}','EmployeeController@completed');
 
 Route::get('/employees_dashboard','DashboardController@employee');
 Route::get('employees/tasks','EmployeeController@tasks');
+Route::get('employees/check1/{id}/{checked}/{checked1}','EmployeeController@check1');
+Route::get('employees/uncheck/{id}/{checked}/{checked1}','EmployeeController@uncheck');
 Route::get('employees/invoices','EmployeeController@invoices');
 Route::get('employees/orders','EmployeeController@orders');
 Route::post('employees/saveNotes/{order}','EmployeeController@saveNotes');
@@ -173,6 +175,7 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('finished/{order}','AdminOrderController@finished');
     Route::get('activated/{order}','AdminOrderController@activated');
     Route::get('cancelled/{order}','AdminOrderController@cancelled');
+    Route::get('seen/{id}','AdminOrderController@seen');
     Route::post('adminorders/addEmployee/{order}','AdminOrderController@addEmployee');
     Route::post('adminorders/removeEmployee/{order}','AdminOrderController@removeEmployee');
     Route::post('adminorders/search','AdminOrderController@search');

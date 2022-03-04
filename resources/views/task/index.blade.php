@@ -1,19 +1,19 @@
 @extends('layouts.app')
 @section('css')
-
-
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
     <style>
-        .pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
-    </style>
+        .pagination>li>a,
+        .pagination>li>span {
+            border-radius: 50% !important;
+            margin: 0 5px;
+        }
 
+    </style>
 @endsection
 @section('content')
 
-
-
-    <div class="row mb-4" style="padding-bottom: 0px;border-radius: 0px 0px 25px 25px;background-color: #323759;margin-left: -27px;margin-right: 0px;width: 104%;padding-left: 15px;padding-right: 15px;">
+    {{-- <div class="row mb-4" style="padding-bottom: 0px;border-radius: 0px 0px 25px 25px;background-color: #323759;margin-left: -27px;margin-right: 0px;width: 104%;padding-left: 15px;padding-right: 15px;">
         <div class="col-md-4">
             <h4 class="page-title ml-2 mt-3" style="color: #FFF;">Tasks</h4>
         </div>
@@ -49,16 +49,266 @@
                   <button type="button" style="background-color: #3b3f77;border-radius: 25px;border-color: white;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                     Letzte 30 Tage <i class="fa fa-chevron-down"></i>
                   </button>
-                {{-- </form> --}}
-            </center>
-        </div>
-        @endsection
-        @section('quill_js')
 
+            </center>
+        </div> --}}
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                </div>
+                <h4 class="page-title">Meine Aufgaben</h4>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- end row -->
+
+
+
+    <!-- Table with panel -->
+
+
+
+    <div class="row">
+
+        <div class="col-xl-12">
+            <div class="card-box">
+                <h4 class="header-title mb-3">Meine Aufgaben</h4>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="search" autocomplete="off" value=""
+                        placeholder="&#xF002; Search..." style="font-family:Arial, FontAwesome">
+                </div>
+
+
+
+
+                @foreach ($orders as $order)
+                    <div class="container mt-4" id="allsearch">
+                        <div>
+                            {{-- <h3>{{ $order->pdetail->product_title }}</h3> --}}
+                            @if ($order->order_status == '3')
+                                @if ($order->pdetail->product_title == 'Bewerbung Optimierung')
+                                    <h3>{{ $order->pdetail->product_title }}</h3>
+
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
+                                        data-id="12" data-name="2" required>
+
+                                    <span>Wir korrigieren Ihr Anschreiben und Lebenslauf und geben Ihnen
+                                        Verbesserungsvorschl&auml;ge und Tipps. Die verbesserten Unterlagen erhalten Sie als
+                                        PDF-Dateien.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                @endif
+                            @endif
+                            @if ($order->order_status == '3')
+                                @if ($order->pdetail->product_title == '1 × Lebenslauf erstellen')
+                                    <h3>{{ $order->pdetail->product_title }}</h3>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
+                                        data-id="14" data-name="3">
+
+
+
+                                    <span>Individueller Lebenslauf.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
+                                        data-id="15" data-name="3">
+
+
+
+                                    <span>Bewerbungs-Deckblatt.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
+                                        data-id="16" data-name="3">
+
+
+
+                                    <span>Word (.docx) &amp; PDF-Datei.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
+                                        data-id="17" data-name="3">
+
+
+
+                                    <span>Premium Design (Optional).</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
+                                        data-id="18" data-name="3">
+
+
+                                    <span>Bewerbungshomepage (Optional).</span>
+                                @endif
+                            @endif
+                            @if ($order->order_status == '3')
+                                @if ($order->pdetail->product_title == 'Bewerbungspaket Standard')
+                                    <h3>{{ $order->pdetail->product_title }}</h3>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
+                                        data-id="7" data-name="1">
+
+                                    <span>Pers&ouml;nliches Anschreiben.</span>
+                                    <hr style="border: 0.2px solid lightgrey;width: 100%;">
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="8" data-name="1">
+
+                                    <span>Individueller Lebenslauf.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="9" data-name="1">
+
+
+                                    <span>Bewerbungs-Deckblatt.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="10" data-name="1">
+
+                                    <span>Word (.docx) &amp; PDF-Datei.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="11" data-name="1">
+
+
+                                    <span>Premium Design (Optional).</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="13" data-name="1">
+
+                                    <span>Bewerbungshomepage (Optional).</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+                                    <p><strong>F&uuml;r Fachkr&auml;fte | Angestellte | absolvierte
+                                            Berufsausbildung</strong></p>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                @endif
+                            @endif
+                            @if ($order->order_status == '3')
+                                @if ($order->pdetail->product_title == 'Bewerbungspaket Advanced')
+                                    <h3>{{ $order->pdetail->product_title }}</h3>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="1" data-name="1">
+
+                                    <span>Erstellung &ndash; Komplette Bewerbung.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-name="1" data-id="2">
+
+                                    <span>Deckblatt, Anschreiben und Lebenslauf.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-name="1" data-id="3">
+
+                                    <span>Bearbeitbare Word-Datei inkl. PDF.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-name="1" data-id="4">
+
+
+                                    <span>Modernes Bewerbungsdesign.</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="5" data-name="1">
+
+                                    <span>Premium Design (Optional).</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
+
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="6" data-name="1">
+
+                                    <span>Bewerbungshomepage&nbsp;(optional).</span>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                    <p><strong>F&uuml;r F&uuml;hrungskr&auml;fte | Akademiker | Management</strong></p>
+                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                @endif
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+
+
+            </div> <!-- end card-box-->
+        </div> <!-- end col -->
+        <!-- Todos app -->
+    </div> <!-- end row -->
+@endsection
+@section('quill_js')
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
+            $("#search").on("keyup", function() {
+                var value = $(this).val();
+                $("#allsearch  div").filter(function() {
+
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+
+            });
+            // function task(id) {
+
+        });
+
+        $(document).ready(function() {
             $("#search").on("keyup", function() {
                 var value = $(this).val().toLowerCase();
                 $("#designtable tbody tr").filter(function() {
@@ -68,30 +318,27 @@
 
             $('#designtable').DataTable();
         });
-
     </script>
 
 
     <script>
         $(document).ready(function() {
-            $('#invoiceDownload').on('click', function (e) {
+            $('#invoiceDownload').on('click', function(e) {
                 e.preventDefault();
-                window.open('{{url('invoices/pdf').'/'}}'+$(this).attr('data-id'), '_blank');
+                window.open('{{ url('invoices/pdf') . '/' }}' + $(this).attr('data-id'), '_blank');
 
             });
 
-            $('#uploadDocuments').on('click', function (e) {
+            $('#uploadDocuments').on('click', function(e) {
                 e.preventDefault();
-                window.open('{{url('adminorders/').'/'}}'+$(this).attr('data-id')+'/edit', '_blank');
+                window.open('{{ url('adminorders/') . '/' }}' + $(this).attr('data-id') + '/edit',
+                    '_blank');
 
             });
         });
 
-		$("#checkAll").click(function () {
-    		 $('input:checkbox').not(this).prop('checked', this.checked);
-		 });
-
+        $("#checkAll").click(function() {
+            $('input:checkbox').not(this).prop('checked', this.checked);
+        });
     </script>
 @endsection
-
-
