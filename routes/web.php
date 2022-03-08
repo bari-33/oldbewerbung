@@ -209,6 +209,8 @@ Route::get('/chat/getAll/{id}','ChatController@getAll');
 
 // task
 Route::resource('task','taskController');
+Route::get('check/{id}/{checked}/{checked1}','taskController@check');
+Route::get('uncheck1/{id}/{checked}/{checked1}','taskController@uncheck1');
 
 // message
 Route::resource('message','messageController');

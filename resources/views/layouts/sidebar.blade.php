@@ -210,7 +210,7 @@
 
                         <li>
 
-                            <a href="{{ url('orders/current/' . Auth::user()->id) }}">
+                            <a href="{{ url('orders/current/' . Auth::user()->orders) }}">
                                 <i class="fe-stop-circle"></i>
                                 <span> Aktueller Auftrag </span>
                             </a>

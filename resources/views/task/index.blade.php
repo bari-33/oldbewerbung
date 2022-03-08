@@ -87,134 +87,272 @@
 
 
                 @foreach ($orders as $order)
-                    <div class="container mt-4" id="allsearch">
-                        <div>
-                            {{-- <h3>{{ $order->pdetail->product_title }}</h3> --}}
-                            @if ($order->order_status == '3')
+
+                    <?php
+                      $checked = explode(',', $order->check_boxes);
+                     ?>
+
+                        <div class="container mt-4" id="allsearch">
+                            <div>
+                                {{-- <h3>{{ $order->pdetail->product_title }}</h3> --}}
+                                @if ($order->order_status == '3')
                                 @if ($order->pdetail->product_title == 'Bewerbung Optimierung')
-                                    <h3>{{ $order->pdetail->product_title }}</h3>
 
-                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                <h3>{{ $order->pdetail->product_title }}</h3>
+
+                                <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                <?php
+                                 $data="12";
+                                    if (in_array($data, $checked)) {
+                                ?>
 
-                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
-                                        data-id="12" data-name="2" required>
+                                    <input class="check" id="checkbox1" type="checkbox"
+                                        value="{{ $order->id }}" data-id="12" data-name ="2" checked>
+                                        <?php
+                                        }else {
+                                            ?>
+                                             <input class="check" id="checkbox1" type="checkbox"
+                                             value="{{ $order->id }}" data-id="12" data-name ="2" required>
+                                            <?php
 
+                                        }
+                                        ?>
                                     <span>Wir korrigieren Ihr Anschreiben und Lebenslauf und geben Ihnen
                                         Verbesserungsvorschl&auml;ge und Tipps. Die verbesserten Unterlagen erhalten Sie als
                                         PDF-Dateien.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
+
+
                                 @endif
-                            @endif
-                            @if ($order->order_status == '3')
+                                @endif
+                                @if ($order->order_status == '3')
                                 @if ($order->pdetail->product_title == '1 × Lebenslauf erstellen')
-                                    <h3>{{ $order->pdetail->product_title }}</h3>
-                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                <h3>{{ $order->pdetail->product_title }}</h3>
+                                <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                <?php
+                                $data="14";
+                             if (in_array($data, $checked)) {
+                                  ?>
+                              <input class="check" id="checkbox1" type="checkbox"
+                              value="{{ $order->id }}" data-id="14" data-name ="3" checked>
+                              <?php
+                              }else {
+                                  ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
-                                        data-id="14" data-name="3">
-
+                               <input class="check" id="checkbox1" type="checkbox"
+                              value="{{ $order->id }}" data-id="14" data-name ="3" >
+                              <?php
+                              }
+                              ?>
 
 
                                     <span>Individueller Lebenslauf.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                    $data="15";
+                                 if (in_array($data, $checked)) {
+                                      ?>
+                                  <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="15" data-name ="3" checked>
+                                  <?php
+                                  }else {
+                                      ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
-                                        data-id="15" data-name="3">
-
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="15" data-name ="3" >
+                                  <?php
+                                  }
+                                  ?>
 
 
                                     <span>Bewerbungs-Deckblatt.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                $data="16";
+                             if (in_array($data, $checked)) {
+                                  ?>
+                              <input class="check" id="checkbox1" type="checkbox"
+                              value="{{ $order->id }}" data-id="16" data-name ="3" checked>
+                              <?php
+                              }else {
+                                  ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
-                                        data-id="16" data-name="3">
-
+                               <input class="check" id="checkbox1" type="checkbox"
+                              value="{{ $order->id }}" data-id="16" data-name ="3" >
+                              <?php
+                              }
+                              ?>
 
 
                                     <span>Word (.docx) &amp; PDF-Datei.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                    $data="17";
+                                 if (in_array($data, $checked)) {
+                                      ?>
+                                  <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="17" data-name ="3" checked>
+                                  <?php
+                                  }else {
+                                      ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
-                                        data-id="17" data-name="3">
-
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="17" data-name ="3" >
+                                  <?php
+                                  }
+                                  ?>
 
 
                                     <span>Premium Design (Optional).</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
+                                    <?php
+                                    $data="18";
+                                 if (in_array($data, $checked)) {
+                                      ?>
+                                  <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="18" data-name ="3" checked>
+                                  <?php
+                                  }else {
+                                      ?>
 
-                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
-                                        data-id="18" data-name="3">
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="18" data-name ="3" >
+                                  <?php
+                                  }
+                                  ?>
 
 
                                     <span>Bewerbungshomepage (Optional).</span>
                                 @endif
-                            @endif
-                            @if ($order->order_status == '3')
+                                @endif
+                                @if ($order->order_status == '3')
                                 @if ($order->pdetail->product_title == 'Bewerbungspaket Standard')
-                                    <h3>{{ $order->pdetail->product_title }}</h3>
-                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                <h3>{{ $order->pdetail->product_title }}</h3>
+                                <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                <?php
+                                $data="7";
+                             if (in_array($data, $checked)) {
+                                  ?>
+                              <input class="check" id="checkbox1" type="checkbox"
+                              value="{{ $order->id }}" data-id="7"  data-name ="1" checked>
+                              <?php
+                              }else {
+                                  ?>
 
-                                    <input class="check" id="checkbox1" type="checkbox" value="{{ $order->id }}"
-                                        data-id="7" data-name="1">
+                               <input class="check" id="checkbox1" type="checkbox"
+                              value="{{ $order->id }}" data-id="7" data-name ="1" >
+                              <?php
+                              }
+                              ?>
+
 
                                     <span>Pers&ouml;nliches Anschreiben.</span>
                                     <hr style="border: 0.2px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                    $data="8";
+                                 if (in_array($data, $checked)) {
+                                      ?>
+                                  <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="8"  data-name ="1" checked>
+                                  <?php
+                                  }else {
+                                      ?>
 
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="8" data-name="1">
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="8" data-name ="1" >
+                                  <?php
+                                  }
+                                  ?>
 
                                     <span>Individueller Lebenslauf.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
-
+                                    <?php
+                                     $data="9";
+                                  if (in_array($data, $checked)) {
+                                       ?>
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                   value="{{ $order->id }}" data-id="9" data-name ="1" checked>
+                                   <?php
+                                   }else {
+                                       ?>
 
                                     <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="9" data-name="1">
-
+                                   value="{{ $order->id }}" data-id="9" data-name ="1" >
+                                   <?php
+                                   }
+                                   ?>
 
                                     <span>Bewerbungs-Deckblatt.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                    $data="10";
+                                 if (in_array($data, $checked)) {
+                                      ?>
+                                  <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="10"  data-name ="1" checked>
+                                  <?php
+                                  }else {
+                                      ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="10" data-name="1">
-
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="10" data-name ="1" >
+                                  <?php
+                                  }
+                                  ?>
                                     <span>Word (.docx) &amp; PDF-Datei.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                    $data="11";
+                                 if (in_array($data, $checked)) {
+                                      ?>
+                                  <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="11" data-name ="1" checked>
+                                  <?php
+                                  }else {
+                                      ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="11" data-name="1">
-
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="11" data-name ="1" >
+                                  <?php
+                                  }
+                                  ?>
 
                                     <span>Premium Design (Optional).</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                    $data="13";
+                                 if (in_array($data, $checked)) {
+                                      ?>
+                                  <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="13" data-name ="1" checked>
+                                  <?php
+                                  }else {
+                                      ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="13" data-name="1">
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                  value="{{ $order->id }}" data-id="13" data-name ="1" >
+                                  <?php
+                                  }
+                                  ?>
 
                                     <span>Bewerbungshomepage (Optional).</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
@@ -223,66 +361,132 @@
                                             Berufsausbildung</strong></p>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
                                 @endif
-                            @endif
-                            @if ($order->order_status == '3')
+                                @endif
+                                @if ($order->order_status == '3')
                                 @if ($order->pdetail->product_title == 'Bewerbungspaket Advanced')
-                                    <h3>{{ $order->pdetail->product_title }}</h3>
-                                    <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
+                                <h3>{{ $order->pdetail->product_title }}</h3>
+                                <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                                <?php
+                                     $data="1";
+                                  if (in_array($data, $checked)) {
+                                       ?>
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                   value="{{ $order->id }}" data-id="1" data-name ="1" checked>
+                                   <?php
+                                   }else {
+                                       ?>
 
                                     <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="1" data-name="1">
-
+                                   value="{{ $order->id }}" data-id="1" data-name ="1" >
+                                   <?php
+                                   }
+                                   ?>
                                     <span>Erstellung &ndash; Komplette Bewerbung.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
-
+                                    <?php
+                                       $data="2";
+                                    if (in_array($data, $checked)) {
+                                       ?>
+                                   <input class="check" id="checkbox1" type="checkbox"
+                                   value="{{ $order->id }}" data-id="2"data-name ="1" checked>
+                                   <?php
+                                   }else {
+                                       ?>
 
                                     <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-name="1" data-id="2">
+                                   value="{{ $order->id }}" data-name ="1" data-id="2" >
+                                   <?php
+                                   }
+                                   ?>
 
                                     <span>Deckblatt, Anschreiben und Lebenslauf.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
+                                    <?php
+                                    $data="3";
+                                    if (in_array($data, $checked)) {
+                                         ?>
+                                     <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-name ="1" data-id="3" checked>
+                                     <?php
+                                     }else {
+                                         ?>
 
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-name="1" data-id="3">
+                                      <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-name ="1" data-id="3" >
+                                     <?php
+                                     }
+                                     ?>
 
                                     <span>Bearbeitbare Word-Datei inkl. PDF.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
+                                    <?php
+                                   $data="4";
+                                    if (in_array($data, $checked)) {
+                                         ?>
+                                     <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-id="4" data-name ="1" checked>
+                                     <?php
+                                     }else {
+                                         ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-name="1" data-id="4">
-
+                                      <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-name ="1" data-id="4" >
+                                     <?php
+                                     }
+                                     ?>
 
                                     <span>Modernes Bewerbungsdesign.</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
 
+                                    <?php
+                                   $data="5";
+                                    if (in_array($data, $checked)) {
+                                         ?>
+                                     <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-id="5" data-name ="1" checked>
+                                     <?php
+                                     }else {
+                                         ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="5" data-name="1">
+                                      <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-id="5" data-name ="1" >
+                                     <?php
+                                     }
+                                     ?>
 
                                     <span>Premium Design (Optional).</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
 
+                                    <?php
+                                     $data="6";
+                                    if (in_array($data, $checked)) {
+                                         ?>
+                                     <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-id="6" data-name ="1" checked>
+                                     <?php
+                                     }else {
+                                         ?>
 
-
-                                    <input class="check" id="checkbox1" type="checkbox"
-                                        value="{{ $order->id }}" data-id="6" data-name="1">
+                                      <input class="check" id="checkbox1" type="checkbox"
+                                     value="{{ $order->id }}" data-id="6" data-name ="1" >
+                                     <?php
+                                     }
+                                     ?>
 
                                     <span>Bewerbungshomepage&nbsp;(optional).</span>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
                                     <p><strong>F&uuml;r F&uuml;hrungskr&auml;fte | Akademiker | Management</strong></p>
                                     <hr style="border: 0.3px solid lightgrey;width: 100%;">
                                 @endif
-                            @endif
+                                @endif
+                            </div>
                         </div>
-                    </div>
                 @endforeach
 
 
@@ -308,37 +512,32 @@
 
         });
 
-        $(document).ready(function() {
-            $("#search").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#designtable tbody tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        $('.check').click(function() {
+        var  checked = $(this).attr("data-id");
+        var  checked1 = $(this).attr("data-name");
+          var  id = $(this).val();
+            if (!$(this).is(':checked')) {
+
+                $.ajax({
+                    type: "get",
+                    url: "uncheck1/"+ id + '/' + checked + '/' +checked1,
+                    dataType: 'json',
+                    success: function(data) {
+                       
+                    }
                 });
-            });
+            } else {
+                $.ajax({
+                    type: "get",
+                    url: "check/"+ id + '/' + checked +'/' +checked1,
+                    dataType: 'json',
+                    success: function(data) {
 
-            $('#designtable').DataTable();
-        });
-    </script>
 
+                    }
+                });
+            }
 
-    <script>
-        $(document).ready(function() {
-            $('#invoiceDownload').on('click', function(e) {
-                e.preventDefault();
-                window.open('{{ url('invoices/pdf') . '/' }}' + $(this).attr('data-id'), '_blank');
-
-            });
-
-            $('#uploadDocuments').on('click', function(e) {
-                e.preventDefault();
-                window.open('{{ url('adminorders/') . '/' }}' + $(this).attr('data-id') + '/edit',
-                    '_blank');
-
-            });
-        });
-
-        $("#checkAll").click(function() {
-            $('input:checkbox').not(this).prop('checked', this.checked);
         });
     </script>
 @endsection

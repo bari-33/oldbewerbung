@@ -127,17 +127,17 @@
                 foreach ($orders as $order) {
 
 
-            ?>
+                  ?>
                     @if ($order->order_status == 3)
-                    @if ($order->notification_status == 0)
-                        <?php
-                        $data = explode(',', $order->id);
-                        array_push($count, $data);
-                        $count1 = count($count);
-                        ?>
+                        @if ($order->notification_status == 0)
+                            <?php
+                            $data = explode(',', $order->id);
+                            array_push($count, $data);
+                            $count1 = count($count);
+                            ?>
 
-                        <span class="badge badge-danger rounded-circle noti-icon-badge">{{ $count1 }}</span>
-                    @endif
+                            <span class="badge badge-danger rounded-circle noti-icon-badge">{{ $count1 }}</span>
+                        @endif
                     @endif
 
                     <?php
@@ -157,7 +157,7 @@
                         @if ($order->notification_status == 0)
                             <a href="{{ url('task') }}" onclick="seen({{ $order->id }})" type="button"
                                 class="text-dark">Order #{{ $order->id }} is finished, Check IT</a>
-                                <hr style="border: 0.3px solid lightgrey;width: 100%;">
+                            <hr style="border: 0.3px solid lightgrey;width: 100%;">
                         @endif
                     @endif
                     <?php

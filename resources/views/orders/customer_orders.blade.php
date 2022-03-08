@@ -142,23 +142,27 @@
                                 <td><a href="{{url('orders/current/'.$order->id)}}" class="text-body font-weight-bold">{{$order->id}}</a> </td>
                                 <td>
                                     @if($order->order_status==0)
-                                    <div class="alert alert-warning" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">On-Hold
+                                    <div class="alert alert-secondary" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">On-Hold
                                     </div>
                                         @endif
-                                        @if($order->order_status==1)
-                                            <div class="alert alert-success" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">In Process
-                                            </div>
-                                        @endif
                                         @if($order->order_status==2)
-                                            <div class="alert alert-success" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">In Process
+                                            <div class="alert alert-info" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">In Running
                                             </div>
                                         @endif
                                         @if($order->order_status==3)
-                                            <div class="alert alert-warning" role="alert" style="background-color:orange;border-color:orange;border-radius: 20px;padding-top: 5%;padding-bottom: 5%">Awaiting Payment
+                                            <div class="alert alert-warning" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">In check
                                             </div>
                                         @endif
                                         @if($order->order_status==4)
-                                            <div class="alert alert-primary" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">Completed
+                                            <div class="alert alert-success" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">Completed
+                                            </div>
+                                        @endif
+                                        @if($order->order_status==-1)
+                                            <div class="alert alert-primary" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">Activated
+                                            </div>
+                                        @endif
+                                        @if($order->order_status==1)
+                                            <div class="alert alert-danger" role="alert" style="border-radius: 20px;padding-top: 5%;padding-bottom: 5%">Cancled
                                             </div>
                                         @endif
                                 </td>
@@ -189,9 +193,12 @@
                                 <td>
 
                                     <a target="_blank" href="{{url('invoices/'.$order->id)}}"><button type="button" class="btn btn-sm btn-light" id="invoiceDownload" data-id="{{$order->id}}"><i class="fe-file-text"></i></button></a>
+                                    @if ($order->order_status==-1)
+
+
                                     <button type="button" data-toggle="modal" data-target="#trialDocumentsModal" id="trialDocuments" data-id="{{$order->id}}" class="btn btn-sm btn-light" @if($order->trialdocuments()->count()==0) disabled @endif><i class="fe-upload"></i></button>
                                     <button type="button" data-toggle="modal" data-target="#finishedDocumentsModal" id="finishedDocuments" data-id="{{$order->id}}" class="btn btn-sm btn-primary" @if($order->finisheddocuments()->count()==0 || $order->payment_status==0) disabled @endif><i class="fe-upload"></i></button>
-
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
@@ -227,23 +234,22 @@
 
             $('#trialDocuments').on('click',function () {
                 id=$(this).attr('data-id');
-                console.log(id);
-                console.log();
                 $.ajax({
                     type : 'get',
                     url  : 'getTrialDocuments/'+id,
                     success: function(res){
+                        console.log(res);
                         var tsr='';
                         for(i=0;i<res.length;i++) {
 
                           tsr+= '<tr>'+
-                                '<td><a href='+'"'+window.location.origin+'/blog/public/files/trialdocuments/'+res[i].name+'" download="'+res[i].name+'">'+res[i].name+'</a></td>'
+                                '<td><a href='+'"'+window.location.origin+'/bewerbung/public/files/trialdocuments/'+res[i].name+'" download="'+res[i].name+'">'+res[i].name+'</a></td>'
                                 +'</tr>';
 
                         }
-
-
+                             console.log(tsr);
                         $('#trialcontent').html(tsr);
+
 
                     },
                     error: function(res){
@@ -264,7 +270,7 @@
                         for(i=0;i<res.length;i++) {
 
                             tsr+= '<tr>'+
-                                '<td><a href='+'"'+window.location.origin+'/blog/public/files/finisheddocuments/'+res[i].name+'" download="'+res[i].name+'">'+res[i].name+'</a></td>'
+                                '<td><a href='+'"'+window.location.origin+'/bewerbung/public/files/finisheddocuments/'+res[i].name+'" download="'+res[i].name+'">'+res[i].name+'</a></td>'
                                 +'</tr>';
 
                         }

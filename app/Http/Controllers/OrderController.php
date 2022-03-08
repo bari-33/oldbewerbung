@@ -208,12 +208,17 @@ class OrderController extends Controller
 
     public function currentOrder($order)
     {
-         
-        $order=Order::find($order);
-		  
+        // echo '<pre>'; print_r($order); echo '</pre>'; die;
+        $data = json_decode($order);
+        foreach ($data as $key => $value) {
+           $data = $value->id;
+
+
+        $order=Order::find($data);
         $messages=Messenger::where('to',Auth::user()->id)->orWhere('from',Auth::user()->id)->orderBy('created_at','asc')->get();
         $product=Product::find($order->product_id);
         $design=Design::find($order->design_id);
+
         $website=Website::find($order->website_id);
 
         //     $progress_count=$order->orderprogress->count();
@@ -246,7 +251,7 @@ class OrderController extends Controller
         // $tax=str_replace(".",",",(float)str_replace(",",".",$order->total_price)*((float)((int)$tax_string[0]))/100);
      $tax=str_replace(".",",",number_format(((float)str_replace(",",".",$order->total_price)*0.19),2));
 
-
+        }
         return view('orders.current_order',compact('order','product','design','website','sig','tax','messages'));
     }
 
